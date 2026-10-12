@@ -4,7 +4,13 @@
  * (Only needed for development. Visitors never run this.)
  */
 require('../js/rules.js');
+// Preserve the team's final 104 regression cases; load the optional v5.1
+// browser security modules in the same order as index.html.
+for (const moduleName of ['psl-data','public-suffix','confusables-data','domain-security','url-security'])
+  require('../js/' + moduleName + '.js');
 require('../js/analyser.js');
+for (const moduleName of ['html-security','qr-security'])
+  require('../js/' + moduleName + '.js');
 require('../js/guidance.js');
 require('../js/content.js');
 require('../js/eml.js');

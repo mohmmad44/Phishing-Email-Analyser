@@ -39,12 +39,13 @@
       id: 'urgency', skill: 'pressure', weight: 12, modes: BOTH,
       title: 'Urgency and pressure language',
       patterns: [
+        /(?:\b|^)(?:dringend|sofort|unverzüglich|umgehend|jetzt handeln|handeln sie jetzt)(?:\b|$)/giu, /\binnerhalb (?:von )?\d+\s*(?:stunden?|minuten?|tagen?)\b/giu, /\b(?:noch heute|letzte mahnung|letzte warnung|frist läuft ab)\b/giu,
         /\burgent(ly)?\b/gi, /\bimmediate(ly)?\b/gi, /\bas soon as possible\b|\basap\b/gi,
         /\bwithin (the next )?\d+\s*(hours?|hrs?|minutes?|mins?|days?)\b/gi,
         /\b(act|respond|reply|verify|confirm|update) now\b/gi, /\b(today|tonight) only\b/gi,
         /\bby (the )?end of (the )?(day|business)\b/gi, /\bfinal (notice|warning|reminder)\b/gi,
         /\blast chance\b/gi, /\btime[- ]sensitive\b/gi, /\bdon'?t delay\b/gi, /\bright away\b/gi,
-        /\bexpires? (today|tonight|soon|in \d+)\b/gi, /\bbefore it'?s too late\b/gi,
+        /\bexpires? (today|tonight|soon|in (?:[01] ?(?:hours?|days?)|\d+ ?minutes?))\b/gi, /\bbefore it'?s too late\b/gi,
         /\bpay now\b/gi, /\b(verify|confirm|update|updated|pay|paid|respond|reply|complete|completed|re-?register|sign in|log ?in)\b[^.\n]{0,40}\bby \d{1,2}([:.]\d{2}|\s?(am|pm))\b/gi, /\b(must|required to|need to|have to)\b[^.\n]{0,40}\b(today|tonight)\b/gi
       ],
       explain: 'Attackers create a sense of urgency so you act before you think. Real organisations rarely demand action within minutes or hours.'
@@ -53,6 +54,7 @@
       id: 'threat', skill: 'pressure', weight: 15, modes: BOTH,
       title: 'Threat of account suspension, closure or penalties',
       patterns: [
+        /\b(?:konto|zugang|onlinebanking|online[- ]banking|karte|postfach|account)\b[^.\n]{0,55}\b(?:gesperrt|gesperrt wird|sperren|deaktiviert|eingefroren|geschlossen|eingeschränkt)\b/giu, /\b(?:kontosperrung|sperrung ihres kontos|drohende sperrung)\b/giu,
         /\b(accounts?|mailbox(es)?|access|service|subscription|card)\b[^.\n]{0,40}\b(suspend(ed)?|suspension|locked|closed|closure|terminated|deactivated|disabled|blocked|restricted|cancell?ed)\b/gi,
         /\b(suspend|lock|close|terminate|deactivate|disable|block|restrict)\w*\b[^.\n]{0,25}\byour (account|mailbox|access|card)\b/gi,
         /\blegal action\b|\blawsuit\b|\barrest warrant\b|\bwarrant for your arrest\b|\bpenalt(y|ies)\b|\bbe fined\b/gi,
@@ -69,10 +71,9 @@
       title: 'Request for your password or login details',
       patterns: [
         /\b(confirm|verify|update|validate|re-?enter|provide|send|share|enter|type|give|tell)\b[^.\n]{0,40}\b(password|passcode|login details|log-in details|credentials|sign-?in details|online banking pin|pin)\b/gi,
-        /\b(password|credentials)\b[^.\n]{0,30}\b(expire[sd]?|expiring|will be reset|reset required)\b/gi,
-        /\bverify your (account|identity|mailbox|email|e-mail)\b/gi,
-        /\b(log ?in|sign ?in)\b[^.\n]{0,30}\bto (verify|confirm|restore|unlock|keep|reactivate|avoid)\b/gi,
-        /\bsecurity (questions?|answers?)\b/gi
+        /\b(send|submit|type|confirm|provide|enter|share|disclose|reveal)\b[^.\n]{0,40}\b(security (question|answer)s?|password|pin|passcode|login credentials)\b/gi,
+        /\b(passwort|kennwort|zugangsdaten|anmeldedaten|online[- ]banking[- ]pin)\b[^.\n]{0,40}\b(eingeben|bestätigen|mitteilen|senden|übermitteln)\b/giu,
+        /\b(eingeben|bestätigen|übermitteln|mitteilen|senden|angeben|verifizieren)\b[^.\n]{0,40}\b(passwort|kennwort|zugangsdaten|anmeldedaten|pin)\b/giu
       ],
       explain: 'Legitimate services never ask you to send or "confirm" your password by email, text or phone. This is the most common goal of phishing: stealing your login so the attacker can take over the account.'
     },
@@ -82,6 +83,7 @@
       id: 'mfa-request', skill: 'mfa', weight: 25, modes: BOTH,
       title: 'Request for an MFA / verification code',
       patterns: [
+        /\b(?:tan|sms[- ]code|bestätigungscode|einmalcode|sicherheitscode|otp)\b[^.\n]{0,35}\b(?:mitteilen|senden|eingeben|bestätigen|weitergeben)\b/giu, /\b(?:senden|nennen|teilen|bestätigen|übermitteln|geben)\b[^.\n]{0,35}\b(?:tan|bestätigungscode|einmalcode|sicherheitscode)\b/giu,
         /\b(send|share|give|read|tell|forward|reply with|provide|confirm|repeat)\b[^.\n]{0,40}\b(code|otp|passcode|one[- ]time (password|pin))\b/gi,
         /\bcode\b[^.\n]{0,30}\b(we (just )?sent|you (just )?(got|received)|sent to your (phone|mobile|device|number))\b/gi,
         /\b(approve|accept|tap yes on|press yes on)\b[^.\n]{0,30}\b(push|prompt|request|notification|sign-?in request|login request)\b/gi,
@@ -95,6 +97,7 @@
       id: 'payment', skill: 'money', weight: 22, modes: BOTH,
       title: 'Payment, gift-card or crypto request',
       patterns: [
+        /(?<!\p{L})(?:überweisen sie|sofort überweisen|zahlung sofort|überweisung dringend|gutscheinkarten kaufen|bitcoin senden)\b/giu,
         /\bgift ?cards?\b/gi, /\b(itunes|apple|google play|steam|amazon|ebay|vanilla) (gift )?cards?\b/gi,
         /\bscratch (off )?(the )?(back|code|panel)\b/gi, /\b(wire|bank|telegraphic) transfer\b/gi,
         /\b(bitcoin|btc|cryptocurrency|crypto|usdt|tether|ethereum|wallet address)\b/gi,
@@ -108,6 +111,7 @@
       id: 'bank-change', skill: 'money', weight: 28, modes: BOTH,
       title: 'Request to change bank or payment details',
       patterns: [
+        /\b(?:neue bankverbindung|geänderte bankverbindung|iban geändert|andere iban|bankdaten ändern)\b/giu,
         /\b(change|update|new|changed|updated|amend)\b[^.\n]{0,40}\b(bank (details|account|information|info)|account (number|details)|payment (details|information|instructions)|banking (details|information)|iban|sort code|routing number|remittance details)\b/gi,
         /\b(our|my) (bank|account) (has )?(changed|is changing)\b/gi,
         /\bdo not (use|pay (to|into)) the (old|previous)\b/gi,
@@ -116,7 +120,7 @@
       explain: 'Changing where money is sent is the heart of Business Email Compromise (BEC), one of the costliest cybercrimes. Always confirm bank-detail changes by phoning a number you already trust, never one in the email.'
     },
     {
-      id: 'invoice', skill: 'money', weight: 12, modes: ['email'],
+      id: 'invoice', skill: 'money', weight: 0, modes: ['email'],
       title: 'Invoice or payment-due language',
       patterns: [
         /\binvoices?\b/gi, /\boutstanding (balance|payment|amount)\b/gi, /\boverdue\b/gi,
@@ -179,6 +183,7 @@
       id: 'click-lure', skill: 'links', weight: 8, modes: ['email'],
       title: 'Pushes you to click a link or open a file',
       patterns: [
+        /\b(?:klicken sie hier|öffnen sie den link|jetzt anmelden|hier anmelden|qr[- ]code scannen)\b/giu,
         /\bclick (here|the (link|button) below|below|on the link)\b/gi, /\b(log ?in|sign ?in) (here|below|now)\b/gi,
         /\bopen the (attached|attachment)\b/gi, /\bdownload (the )?(attached|file|document)\b/gi,
         /\bscan (the|this) qr code\b/gi
@@ -248,10 +253,12 @@
       patterns: [/\b(card number|long number on (the front|your card)|cvv|cvc|security code on the back|three[- ]digit code|expiry date|pin number)\b/gi],
       explain: 'Your full card number, CVV and PIN are never needed by someone who is calling to help you. Sharing them lets the caller spend your money.'
     },
-
+    // The following German-specific rules originate in the team's final ZIP.
+    // Overlapping generic v5.1 rules handle scoring; these retain team-specific
+    // finding IDs and explanations without counting an identical signal twice.
     // ── German-language variants (de) — same warning signs, German wording ───
     {
-      id: 'urgency-de', skill: 'pressure', weight: 12, modes: BOTH,
+      id: 'urgency-de', skill: 'pressure', weight: 0, modes: BOTH,
       title: 'Urgency and pressure language (German)',
       patterns: [
         /\bdringend\b/gi, /\bsofort\b/gi, /\bumgehend\b/gi,
@@ -263,7 +270,7 @@
       explain: 'German urgency wording such as "dringend", "sofort" or "innerhalb von 24 Stunden" is used to rush you into acting before you think.'
     },
     {
-      id: 'threat-de', skill: 'pressure', weight: 15, modes: BOTH,
+      id: 'threat-de', skill: 'pressure', weight: 0, modes: BOTH,
       title: 'Threat of account suspension or closure (German)',
       patterns: [
         /\b(ihr|dein|das)\s+(konto|postfach|zugang|zugriff|karte|abonnement)\b[^.\n]{0,40}\b(gesperrt|deaktiviert|geschlossen|eingeschränkt|gekündigt|gelöscht)\b/gi,
@@ -274,7 +281,7 @@
       explain: 'Threatening in German to suspend, close or delete your account ("Konto gesperrt", "rechtliche Schritte") is the same scare tactic seen in English phishing.'
     },
     {
-      id: 'password-request-de', skill: 'credentials', weight: 25, modes: BOTH,
+      id: 'password-request-de', skill: 'credentials', weight: 0, modes: BOTH,
       title: 'Request for your password or login details (German)',
       patterns: [
         /\b(bestätigen|verifizieren|aktualisieren|eingeben|bestätige|verifiziere)\b[^.\n]{0,40}\b(passwort|kennwort|zugangsdaten|anmeldedaten|pin)\b/gi,
@@ -285,7 +292,7 @@
       explain: 'Legitimate German services never ask you to "confirm" your Passwort or Zugangsdaten by email. Capturing your login is the usual goal of phishing.'
     },
     {
-      id: 'mfa-request-de', skill: 'mfa', weight: 25, modes: BOTH,
+      id: 'mfa-request-de', skill: 'mfa', weight: 0, modes: BOTH,
       title: 'Request for a code / TAN (German)',
       patterns: [
         /\b(code|bestätigungscode|einmalpasswort|einmalkennwort|tan|sms-?code)\b[^.\n]{0,30}\b(senden|teilen|weiterleiten|eingeben|mitteilen|nennen|durchgeben)\b/gi,
@@ -294,7 +301,7 @@
       explain: 'A one-time Code or TAN is the last defence after your password. Anyone asking you to share it is trying to bypass it.'
     },
     {
-      id: 'money-de', skill: 'money', weight: 22, modes: BOTH,
+      id: 'money-de', skill: 'money', weight: 0, modes: BOTH,
       title: 'Payment, gift-card or bank-detail request (German)',
       patterns: [
         /\bgutschein(karten?|codes?)?\b/gi, /\b(sofortige|dringende) (überweisung|zahlung)\b/gi,
@@ -312,7 +319,7 @@
       explain: 'Bulk German phishing often uses a vague greeting ("Sehr geehrter Kunde") because it is sent to thousands of people at once.'
     },
     {
-      id: 'click-lure-de', skill: 'links', weight: 8, modes: ['email'],
+      id: 'click-lure-de', skill: 'links', weight: 0, modes: ['email'],
       title: 'Pushes you to click a link or open a file (German)',
       patterns: [
         /\bhier klicken\b/gi, /\b(klicken|tippen) sie (hier|auf den link|unten|auf die schaltfläche)\b/gi,

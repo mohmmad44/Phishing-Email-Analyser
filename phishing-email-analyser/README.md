@@ -84,3 +84,9 @@ All three options are free for static sites like this one.
 ## Limits
 
 This is a rule-based teaching tool. It can miss carefully written attacks and can flag genuine messages. A low score does not prove a message is safe. Always verify through a trusted channel and report suspicious messages to your security team.
+
+## Security extension integrated from v5.1
+
+The original team application and its 104 regression tests are preserved. The integration adds optional local Unicode/IDN domain inspection, Public Suffix List-backed parsing, nested URL parameter inspection, HTML-source investigation, and QR-code analysis where a local browser decoder is available. Pasted MIME uses the existing email parser. For detailed merge decisions, testing and limitations see [the integration report](docs/TEAM_V51_INTEGRATION.md).
+
+Neither extracted URLs nor attachments are executed or visited. Optional QR decoder support is not bundled automatically, and test/synthetic benchmark results do **not** establish real-world detection accuracy.

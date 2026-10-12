@@ -1,0 +1,65 @@
+{
+  "source": "Phishing-Email-Analyser-main.zip team baseline merged with v5.1 security changes",
+  "team_baseline_tests": 104,
+  "test_total": 1280,
+  "test_suites": [
+    {
+      "suite": "run-tests.js",
+      "exit_code": 0,
+      "passed": 104,
+      "summary": "104 passed, 0 failed"
+    },
+    {
+      "suite": "domain-security-tests.js",
+      "exit_code": 0,
+      "passed": 66,
+      "summary": "Domain security: 66 passed, 0 failed"
+    },
+    {
+      "suite": "url-security-tests.js",
+      "exit_code": 0,
+      "passed": 26,
+      "summary": "URL security: 26 passed, 0 failed"
+    },
+    {
+      "suite": "advanced-security-tests.js",
+      "exit_code": 0,
+      "passed": 36,
+      "summary": "Advanced security total: 36 passed"
+    },
+    {
+      "suite": "release-hardening-tests.js",
+      "exit_code": 0,
+      "passed": 24,
+      "summary": "Release hardening: 24 passed"
+    },
+    {
+      "suite": "secure-property-tests.js",
+      "exit_code": 0,
+      "passed": 604,
+      "summary": "Property/fuzz checks: 604 passed; elapsed 582ms; seed 0x59F3A"
+    },
+    {
+      "suite": "adversarial-tests.js",
+      "exit_code": 0,
+      "passed": 360,
+      "summary": "Adversarial security suite: 360 passed (including 320 deterministic mutations)"
+    },
+    {
+      "suite": "deployment-policy-tests.js",
+      "exit_code": 0,
+      "passed": 19,
+      "summary": "Deployment policy: 19 passed"
+    },
+    {
+      "suite": "merge-review-tests.js",
+      "exit_code": 0,
+      "passed": 41,
+      "summary": "Merge review security regressions: 41 passed"
+    }
+  ],
+  "javascript_syntax_files_checked": 26,
+  "browser_harness": "passed before packaging; controlled Chromium local-asset test, not live deployment",
+  "synthetic_benchmark": "20 synthetic labels only; no real-world performance conclusion",
+  "remote_CI": "not run; GitHub Actions must be checked on repository after commit"
+}

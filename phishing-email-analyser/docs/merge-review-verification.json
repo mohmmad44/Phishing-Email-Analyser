@@ -1,0 +1,66 @@
+{
+  "release": "5.1-merge-reviewed",
+  "assessment": "Synthetic/regression tests, NOT externally validated phishing accuracy",
+  "suites": [
+    {
+      "suite": "run-tests.js",
+      "passed": true,
+      "checks": 94,
+      "summary": "94 passed, 0 failed"
+    },
+    {
+      "suite": "domain-security-tests.js",
+      "passed": true,
+      "checks": 66,
+      "summary": "Domain security: 66 passed, 0 failed"
+    },
+    {
+      "suite": "url-security-tests.js",
+      "passed": true,
+      "checks": 26,
+      "summary": "URL security: 26 passed, 0 failed"
+    },
+    {
+      "suite": "advanced-security-tests.js",
+      "passed": true,
+      "checks": 36,
+      "summary": "Advanced security total: 36 passed"
+    },
+    {
+      "suite": "release-hardening-tests.js",
+      "passed": true,
+      "checks": 24,
+      "summary": "Release hardening: 24 passed"
+    },
+    {
+      "suite": "secure-property-tests.js",
+      "passed": true,
+      "checks": 604,
+      "summary": "Property/fuzz checks: 604 passed; elapsed 834ms; seed 0x59F3A"
+    },
+    {
+      "suite": "adversarial-tests.js",
+      "passed": true,
+      "checks": 360,
+      "summary": "Adversarial security suite: 360 passed (including 320 deterministic mutations)"
+    },
+    {
+      "suite": "deployment-policy-tests.js",
+      "passed": true,
+      "checks": 19,
+      "summary": "Deployment policy: 19 passed"
+    },
+    {
+      "suite": "merge-review-tests.js",
+      "passed": true,
+      "checks": 41,
+      "summary": "Merge review security regressions: 41 passed"
+    }
+  ],
+  "total_automated_checks": 1270,
+  "suite_failures": 0,
+  "javascript_syntax": "pass",
+  "python_syntax": "pass",
+  "public_corpus_evaluated": false,
+  "ci_status": "workflow authored; remote GitHub run not verified"
+}
