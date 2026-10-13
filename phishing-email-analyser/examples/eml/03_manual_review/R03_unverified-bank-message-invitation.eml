@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Bank Notices" <messages@bank-updates.example>
+To: recipient@company.example
+Subject: You have a secure bank message
+Message-ID: <r03.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+You have a secure message from your bank. Click here to read the message. No sender verification is available in this sample.

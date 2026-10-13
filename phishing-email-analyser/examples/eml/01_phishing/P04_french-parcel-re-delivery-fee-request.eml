@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Livraison" <avis@colis-priorite.example>
+To: recipient@company.example
+Subject: Livraison suspendue =?utf-8?b?4oCU?= action requise
+Message-ID: <p04.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Votre colis est bloqué. Veuillez confirmer vos coordonnées bancaires et payer les frais de livraison immédiatement sur https://livraison-paiement.example/valider.

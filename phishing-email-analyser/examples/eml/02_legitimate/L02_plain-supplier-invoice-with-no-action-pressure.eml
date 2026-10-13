@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Supplier Billing" <billing@supplier.example>
+To: recipient@company.example
+Subject: Invoice 2026-1042 for completed order
+Message-ID: <l02.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello, attached is the regular October invoice for the delivery already received. The purchase order is 2026-1042. Contact your usual account manager if anything looks incorrect.

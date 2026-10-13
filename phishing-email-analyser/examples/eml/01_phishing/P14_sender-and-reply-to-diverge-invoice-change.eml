@@ -1,0 +1,11 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Accounts Payable" <payables@supplier.example>
+To: recipient@company.example
+Subject: Revised vendor invoice
+Message-ID: <p14.synthetic@cybersteps.example>
+Reply-To: payment-corrections@unrelated-payments.example
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Our banking details have changed. Send the payment today to the new IBAN. Please keep this private until the transfer clears.

@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Identity Help" <help@identity-team.example>
+To: recipient@company.example
+Subject: Approve the prompt to avoid lockout
+Message-ID: <p17.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+We are testing your account. Approve the unexpected MFA sign-in notification on your phone immediately, even if you did not initiate a login.

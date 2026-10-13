@@ -1,0 +1,83 @@
+{
+  "schema": "cybersteps.external-evidence-audit.v12.1",
+  "study_date": "2026-10-13",
+  "source": {
+    "repository": "Zenodo",
+    "record": "https://zenodo.org/records/13474746",
+    "doi": "10.5281/zenodo.13474746",
+    "published_year": 2024,
+    "input_filename": "Phishing_validation_emails.csv",
+    "input_sha256": "ad15f63cb8db2caaee33c442f1ff4488b9444530a4c42ab63bb580016b160bd3",
+    "input_md5": "1bf8ec0fe3f67e12dd275ce5b2b91b69",
+    "origin": "Authors describe mixture of real and artificially generated emails, per-record origins unknown",
+    "file_excluded_from_release": true
+  },
+  "dataset": {
+    "original_rows": 2000,
+    "raw_phishing_labeled_rows": 1000,
+    "raw_safe_labeled_rows": 1000,
+    "canonical_exact_duplicates": 1900,
+    "evaluated_distinct": 100,
+    "phishing_labeled_distinct": 23,
+    "safe_labeled_distinct": 77,
+    "approx_template_families": 21,
+    "top_10_family_fraction": 0.89,
+    "has_actual_url_in_distinct_texts": false,
+    "has_full_sender_headers": false,
+    "has_attachment_bytes": false,
+    "label_quality": "Not independently re-adjudicated; some short texts are ambiguous without external context"
+  },
+  "classification": {
+    "threshold": 45,
+    "threshold_frozen_from_existing_analyzer": true,
+    "confusion": {
+      "tp": 5,
+      "tn": 77,
+      "fp": 0,
+      "fn": 18
+    },
+    "precision": 1,
+    "recall": 0.21739,
+    "false_positive_rate": 0,
+    "f1": 0.35714,
+    "wilson95": {
+      "recall": {
+        "lower": 0.09664,
+        "upper": 0.41903,
+        "samples": 23
+      },
+      "false_positive_rate": {
+        "lower": 0,
+        "upper": 0.04752,
+        "samples": 77
+      },
+      "precision": {
+        "lower": 0.56552,
+        "upper": 1,
+        "samples": 5
+      }
+    },
+    "notes": "95% Wilson intervals assume independent samples; templated messages limit this assumption"
+  },
+  "review": {
+    "high_or_explicit_verification_labeled_phishing": 11,
+    "high_or_explicit_verification_labeled_safe": 0,
+    "explicit_verification_warnings": 6,
+    "phishing_labeled_below_high": 18,
+    "phishing_labeled_in_score_20_to_44": 13,
+    "manual_queue_is_not_phishing_verdict": true
+  },
+  "failure_mode_counts_of_distinct_labelled_phishing": {
+    "similar_compromised_account_reset_lures_scoring_20": 10,
+    "generic_parcel_payment_renewal_or_account_settings_lures_scoring_0": 4,
+    "authentication_or_invoice_threat_warnings_scoring_24": 3,
+    "generic_bank_secure_message_lure_scoring_14": 1
+  },
+  "conclusions": [
+    "This is an exploratory external corpus evaluation, not verified operational accuracy.",
+    "The 2,000 dataset records collapse to 100 distinct texts, representing 21 approximate template families.",
+    "Many purported phishing examples have no observable sender, clickable URL, attachment, or other technical proof.",
+    "No score threshold or production detector rules were modified based on this study.",
+    "Next study requires independently adjudicated, diverse and independently held-out source data."
+  ]
+}

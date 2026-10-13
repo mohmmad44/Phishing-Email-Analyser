@@ -1,0 +1,23 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Invoice Team" <finance@invoice-reminder.example>
+To: recipient@company.example
+Subject: Overdue invoice - open the attachment
+Message-ID: <p15.synthetic@cybersteps.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="CYBERSTEPS-P15-1"
+
+--CYBERSTEPS-P15-1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Please open the overdue invoice Invoice_2026.pdf.exe immediately. If prompted, enable content or macros to view the file.
+
+--CYBERSTEPS-P15-1
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice_2026.pdf.exe"
+MIME-Version: 1.0
+
+TVqQAGZpY3Rpb25hbC1ub25mdW5jdGlvbmFsLXRlc3QtYnl0ZXM=
+
+--CYBERSTEPS-P15-1--

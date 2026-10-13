@@ -1,0 +1,11 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Tienda" <recibos@tienda.example>
+To: recipient@company.example
+Subject: Recibo de compra
+Message-ID: <l13.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+
+R3JhY2lhcyBwb3Igc3UgY29tcHJhLiBFbCByZWNpYm8gZXMgaW5mb3JtYXRpdm8uIE5vIGRlYmUg
+cmVzcG9uZGVyIG5pIHByb3BvcmNpb25hciBjb250cmFzZcOxYXMgbyBjw7NkaWdvcy4NCg==

@@ -1,0 +1,40 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "HR Team" <hr@company.example>
+To: recipient@company.example
+Subject: New employee handbook
+Message-ID: <l17.synthetic@cybersteps.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="CYBERSTEPS-L17-1"
+
+--CYBERSTEPS-L17-1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+The attached document is a handbook for new staff. Nothing in this email requires payment or credentials.
+
+--CYBERSTEPS-L17-1
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="employee-handbook.docx"
+MIME-Version: 1.0
+
+UEsDBBQAAAAIAAAAIVB5bjPX6AAAAK0BAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbH1QyU7DMBD9
+FWuuKHHggBCK0wPLETiUDxjZk8SqN3nc0v49Tlt6QIXjzFv1+tXeO7GjzDYGBbdtB4KCjsaGScHn
++rV5AMEFg0EXAyk4EMNq6NeHRCyqNrCCuZT0KCXrmTxyGxOFiowxeyz1zJNMqDc4kbzrunupYygU
+SlMWDxj6Zxpx64p42df3qUcmxyCeTsQlSwGm5KzGUnG5C+ZXSnNOaKvyyOHZJr6pBJBXExbk74Cz
+7r0Ok60h8YG5vKGvLPkVs5Em6q2vyvZ/mys94zhaTRf94pZy1MRcF/euvSAebfjpL49zD99QSwME
+FAAAAAgAAAAhUNZLChvPAAAAUgEAABEAAAB3b3JkL2RvY3VtZW50LnhtbI2QvU7EMAyAXyXKzqUw
+IKja3oKQmFjgAULiXiMSO7IDpW9P0jsdK8tnWbY+/wzHnxTVN7AEwlHfHjqtAB35gKdRv7893zxo
+JcWit5EQRr2B6OM0rL0n95UAi6oClH4d9VJK7o0Rt0CycqAMWGszcbKlpnwyK7HPTA5Eqj9Fc9d1
+9ybZgPqi4f9oaJ6Dg6fLAmcJQ7Sl3iBLyKLbgh/ktxZzw7Jl4BjwU3Ef/Kj5xT/uXdxQptc6RV1P
+ysTFxsG0SiPvvDr2LO88DzF/75h+AVBLAwQUAAAACAAAACFQ8Mz3hcAAAAA5AQAAHAAAAHdvcmQv
+X3JlbHMvZG9jdW1lbnQueG1sLnJlbHON0MFqwzAMBuBXMbovznoo20jSS1voYZfRPoBmK7GpLRnb
+G9nbz1AYK+ywo9CvT0LDbo1BfVIuXniEx64HRWzEel5GuJyPD0+wm4Y3ClhbojifimojXEZwtaYX
+rYtxFLF0kohbZ5YcsbYyLzqhueJCetP3W51/G3BvqpMdIZ/sM6jzV6L/2DLP3tBezEckrn+s0K5J
+OXi+NhTzQvXGluZ6rhmZakcrxhRIO2T7LvITfRXbrjislTJjAD0N+u4H0zdQSwECFAMUAAAACAAA
+ACFQeW4z1+gAAACtAQAAEwAAAAAAAAAAAAAApAEAAAAAW0NvbnRlbnRfVHlwZXNdLnhtbFBLAQIU
+AxQAAAAIAAAAIVDWSwobzwAAAFIBAAARAAAAAAAAAAAAAACkARkBAAB3b3JkL2RvY3VtZW50Lnht
+bFBLAQIUAxQAAAAIAAAAIVDwzPeFwAAAADkBAAAcAAAAAAAAAAAAAACkARcCAAB3b3JkL19yZWxz
+L2RvY3VtZW50LnhtbC5yZWxzUEsFBgAAAAADAAMAygAAABEDAAAAAA==
+
+--CYBERSTEPS-L17-1--

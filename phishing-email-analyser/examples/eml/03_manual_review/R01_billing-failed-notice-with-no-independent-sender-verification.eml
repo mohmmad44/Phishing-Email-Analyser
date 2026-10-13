@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Billing Notice" <notice@service-updates.example>
+To: recipient@company.example
+Subject: Payment was declined
+Message-ID: <r01.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Your payment was declined. Update your billing information to continue using the service. Contact your provider if you did not expect this.

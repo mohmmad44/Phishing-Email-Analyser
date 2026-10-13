@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Orders" <shipping@store.example>
+To: recipient@company.example
+Subject: Your order has shipped
+Message-ID: <l06.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Your purchase has shipped. Your tracking reference is ZT-10082. No payment or identity confirmation is required.

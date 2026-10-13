@@ -1,0 +1,12 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Security Alerts" <security@signin-check.example>
+To: recipient@company.example
+Subject: Verify account access
+Message-ID: <p12.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+
+RGVhciBDdXN0b21lciwgeW91ciBhY2NvdW50IHdpbGwgYmUgc3VzcGVuZGVkIHRvZGF5LiBFbnRl
+ciB5b3VyIHBhc3N3b3JkIGltbWVkaWF0ZWx5IGF0IGh0dHBzOi8vc2lnbmluLWNoZWNrLmV4YW1w
+bGUvbG9naW4gdG8gYXZvaWQgY2xvc3VyZS4NCg==

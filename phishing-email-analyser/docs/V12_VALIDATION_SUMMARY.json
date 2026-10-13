@@ -1,0 +1,113 @@
+{
+  "stage": "v12-reproducible-external-study",
+  "date_utc": "2026-10-13T11:54:12.265863+00:00",
+  "base": "v11.0",
+  "original_team_tests_passed": 104,
+  "all_test_suites_passed": true,
+  "suite_results": [
+    {
+      "suite": "run-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "104 passed, 0 failed"
+    },
+    {
+      "suite": "domain-security-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Domain security: 66 passed, 0 failed"
+    },
+    {
+      "suite": "url-security-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "URL security: 26 passed, 0 failed"
+    },
+    {
+      "suite": "advanced-security-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Advanced security total: 36 passed"
+    },
+    {
+      "suite": "release-hardening-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Release hardening: 24 passed"
+    },
+    {
+      "suite": "secure-property-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Property/fuzz checks: 604 passed; elapsed 656ms; seed 0x59F3A"
+    },
+    {
+      "suite": "adversarial-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Adversarial security suite: 360 passed (including 320 deterministic mutations)"
+    },
+    {
+      "suite": "deployment-policy-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Deployment policy: 19 passed"
+    },
+    {
+      "suite": "merge-review-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "Merge review security regressions: 41 passed"
+    },
+    {
+      "suite": "v6-security-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "v6 contextual, feed, regression and property checks: 63 passed"
+    },
+    {
+      "suite": "v7-evaluation-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "v7 research benchmark & QR resilience: 14 passed"
+    },
+    {
+      "suite": "v8-attachment-security-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "v8 attachment forensics: 23 passed"
+    },
+    {
+      "suite": "v9-quality-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "v9 quality checks: 100 passed"
+    },
+    {
+      "suite": "v10-public-evaluation-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "RESULT: 10 public evaluation tests passed"
+    },
+    {
+      "suite": "v11-verification-quality-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "RESULT: 21 v11 verification-quality tests passed"
+    },
+    {
+      "suite": "v12-evidence-study-tests",
+      "passed": true,
+      "status": 0,
+      "reported_result": "RESULT: 15 v12 tests passed"
+    }
+  ],
+  "actual_public_corpus_downloaded": false,
+  "actual_public_corpus_evaluated": false,
+  "claims_real_world_precision_or_recall": false,
+  "notes": [
+    "Synthetic research-workflow fixtures only. This is NOT real-world phishing detection accuracy.",
+    "Remote GitHub Actions has not run on the user repository.",
+    "Production scoring engine was not modified."
+  ]
+}

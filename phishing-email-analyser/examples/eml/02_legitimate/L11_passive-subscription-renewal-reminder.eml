@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Membership" <updates@membership.example>
+To: recipient@company.example
+Subject: Your membership renews next month
+Message-ID: <l11.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Your existing subscription renews automatically in 30 days at the previously agreed price. You do not need to take any action.

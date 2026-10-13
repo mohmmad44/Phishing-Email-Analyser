@@ -197,3 +197,13 @@ Run `node tools/public-corpus-evaluation.js --input evaluation_data/Phishing_val
 Some phishing messages contain a dangerous *request* but no technical evidence (no link destination, sender domain, full headers, or attachment). A Low risk score from these short messages is **not** a reliable safe verdict. Cybersteps now displays a separate **Independent verification recommended** triage result for six evidence-poor action contexts. This is **not a positive phishing classification**, does not alter the numeric score, and recommends using a known contact or independently typed website/app. Safety/awareness guidance and ordinary receipts are excluded by conservative negative controls.
 
 The external-corpus evaluator now measures human-verification queue coverage and benign review burden **separately** from phishing precision, recall and false-positive rate, with optional SHA-256 corpus fingerprint enforcement. These improvements do not establish real-world accuracy or calibrated probabilities; that still requires a licensed, independent held-out corpus. See [`docs/V11_DECISION_QUALITY_STUDY.md`](docs/V11_DECISION_QUALITY_STUDY.md) and `node tests/v11-verification-quality-tests.js`.
+
+## v12 — evidence-based independent study (research only)
+
+The v12 addition provides **two-stage external evaluation** with a frozen validation-only candidate threshold, separate held-out test corpus, source/label declarations, cross-source message/campaign/template leakage checks, a confusion matrix, precision/recall/false-positive-rate confidence intervals, and an opt-in restricted local false-positive/false-negative review file. Production risk scoring is unchanged. No external email corpus is bundled or downloaded by the browser. The mixed real/generated Zenodo validation dataset could not be retrieved from the release environment and has NOT been evaluated here; real-world accuracy remains unknown.
+
+See [`docs/V12_INDEPENDENT_EVIDENCE_PROTOCOL.md`](docs/V12_INDEPENDENT_EVIDENCE_PROTOCOL.md) for the exact commands and scientific constraints. **Never commit evaluation_data/**, private policies, or real emails. Run `node tests/v12-evidence-study-tests.js` for synthetic research-workflow regression checks.
+
+## Offline `.eml` demonstration fixtures (v12.2)
+
+The project includes **48 fictional, SHA-256-verified `.eml` examples** with actual MIME encodings, HTML alternatives, Unicode spoofing, QR-image and document attachments, and legitimate business/security messages. Browse `examples/eml/README.md`, drag an example onto the Analyse page, or run `node tests/example-eml-validation-tests.js`. Results are recorded in `examples/eml/VALIDATION_RESULTS.md`. These are **educational synthetic examples**, not real-world phishing-accuracy evidence.

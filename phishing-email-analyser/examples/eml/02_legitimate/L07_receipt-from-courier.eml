@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Delivery Desk" <service@courier.example>
+To: recipient@company.example
+Subject: Parcel delivered today
+Message-ID: <l07.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Delivery confirmation: your parcel was delivered at 11:02. If you have not received it, contact support through your usual app.

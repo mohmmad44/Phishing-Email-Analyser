@@ -1,0 +1,733 @@
+{
+  "baseline": "Cybersteps_Team_Final_Evidence_First_v11.0.zip",
+  "version": "12.0",
+  "description": "Source-file comparison, excluding manifest (self-hashing impossible) and this provenance report (self-hash impossible).",
+  "summary": {
+    "unchanged": 110,
+    "modified": 3,
+    "added": 7,
+    "removed": 0
+  },
+  "files": [
+    {
+      "file": ".gitattributes",
+      "status": "unchanged",
+      "original_sha256": "331b5bf4c2ad9e539db0fcde7ba4de500d6675f8ebf039479d5a6ae979959189",
+      "new_sha256": "331b5bf4c2ad9e539db0fcde7ba4de500d6675f8ebf039479d5a6ae979959189"
+    },
+    {
+      "file": ".github/workflows/security-tests.yml",
+      "status": "modified",
+      "original_sha256": "dbde3bc2d46391669377d1d7f51873b5563ae788e489a7d61d50e40d52696423",
+      "new_sha256": "f551c0baa4b50e2e833fed7a39f9bfcf9d3f347cb3e42a0ec2314c6e7cef9cd1"
+    },
+    {
+      "file": ".gitignore",
+      "status": "unchanged",
+      "original_sha256": "6ce79090648eefa8731f25251a5a882b0603c198fe52f589ad97cf9d9054b8c9",
+      "new_sha256": "6ce79090648eefa8731f25251a5a882b0603c198fe52f589ad97cf9d9054b8c9"
+    },
+    {
+      "file": "README.md",
+      "status": "unchanged",
+      "original_sha256": "c516ba469336d9132f62a98c42b6587fcfa99dab45fb348c05ab57890c6d0368",
+      "new_sha256": "c516ba469336d9132f62a98c42b6587fcfa99dab45fb348c05ab57890c6d0368"
+    },
+    {
+      "file": "phishing-email-analyser/README.md",
+      "status": "modified",
+      "original_sha256": "10e07c354aa11c1f07868e2b38497e1bb369f134160d3c62f58aafd7e1d22841",
+      "new_sha256": "33bb7dbc36cda8247c03f54ae8ca0f558af46d29c9a472e83863ee2c5d16d626"
+    },
+    {
+      "file": "phishing-email-analyser/_headers",
+      "status": "unchanged",
+      "original_sha256": "228ec440502776460fe039ac20f16d5bce2669f8c096bcc28e0cfc5fa95957bf",
+      "new_sha256": "228ec440502776460fe039ac20f16d5bce2669f8c096bcc28e0cfc5fa95957bf"
+    },
+    {
+      "file": "phishing-email-analyser/css/styles.css",
+      "status": "unchanged",
+      "original_sha256": "1f69edb60fc3553026babbf4bce0da718b20abc6edf95303552df9154ff22e4b",
+      "new_sha256": "1f69edb60fc3553026babbf4bce0da718b20abc6edf95303552df9154ff22e4b"
+    },
+    {
+      "file": "phishing-email-analyser/docs/BASELINE_COMPARISON.csv",
+      "status": "unchanged",
+      "original_sha256": "6ab3b3c2e175cd5b66de9914deba31a2610e27e7ce84559ebd1bb43970e20efd",
+      "new_sha256": "6ab3b3c2e175cd5b66de9914deba31a2610e27e7ce84559ebd1bb43970e20efd"
+    },
+    {
+      "file": "phishing-email-analyser/docs/MERGE_REVIEW_FIXES.md",
+      "status": "unchanged",
+      "original_sha256": "07a1f03fcf03cafc45ed09486a192b08515ec8d9903ffcc525bdbb443b078fba",
+      "new_sha256": "07a1f03fcf03cafc45ed09486a192b08515ec8d9903ffcc525bdbb443b078fba"
+    },
+    {
+      "file": "phishing-email-analyser/docs/TEAM_BASELINE_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "2b5d05068a50d62cfc4bcf0040c56ac3b9068d58bfcf12c41f3db6287a4a3970",
+      "new_sha256": "2b5d05068a50d62cfc4bcf0040c56ac3b9068d58bfcf12c41f3db6287a4a3970"
+    },
+    {
+      "file": "phishing-email-analyser/docs/TEAM_V51_INTEGRATION.md",
+      "status": "unchanged",
+      "original_sha256": "7845c4d26920a64e0d139a22df6fc79bf2b813a3d8b0fd96d36cbe1cdf5f5faf",
+      "new_sha256": "7845c4d26920a64e0d139a22df6fc79bf2b813a3d8b0fd96d36cbe1cdf5f5faf"
+    },
+    {
+      "file": "phishing-email-analyser/docs/TEAM_V51_VALIDATION.json",
+      "status": "unchanged",
+      "original_sha256": "b4f8ec34404f50247ee241a5e3f4788432b86cdc2f23a713adb5853911abed5c",
+      "new_sha256": "b4f8ec34404f50247ee241a5e3f4788432b86cdc2f23a713adb5853911abed5c"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V10_EXTERNAL_QUALITY_EVALUATION.md",
+      "status": "unchanged",
+      "original_sha256": "8c258606e68c435e43e534b3d205e7ebc84227372f8685e6de53fc72220496ec",
+      "new_sha256": "8c258606e68c435e43e534b3d205e7ebc84227372f8685e6de53fc72220496ec"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V10_FILE_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "6b7d98eeb5009abbf8f63a9fdf783c620bb2423ac7ad87ffde7f224fca096377",
+      "new_sha256": "6b7d98eeb5009abbf8f63a9fdf783c620bb2423ac7ad87ffde7f224fca096377"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V10_RELEASE_NOTES.md",
+      "status": "unchanged",
+      "original_sha256": "c6ff0478f24c971995e6acd44e6f50aa97e3b88d8c5b6634e6ed4d5daf3864d5",
+      "new_sha256": "c6ff0478f24c971995e6acd44e6f50aa97e3b88d8c5b6634e6ed4d5daf3864d5"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V11_BROWSER_PREVIEW.png",
+      "status": "unchanged",
+      "original_sha256": "0e570e665ad6738c9ec2603179b101168b5a21735b2c7c2967b209cddffa3272",
+      "new_sha256": "0e570e665ad6738c9ec2603179b101168b5a21735b2c7c2967b209cddffa3272"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V11_BROWSER_SMOKE.json",
+      "status": "unchanged",
+      "original_sha256": "5954662b151bc2a073e86cba2765fb21c7d37c1ce7205e94bdc97954f46d0840",
+      "new_sha256": "5954662b151bc2a073e86cba2765fb21c7d37c1ce7205e94bdc97954f46d0840"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V11_DECISION_QUALITY_STUDY.md",
+      "status": "unchanged",
+      "original_sha256": "73579ea999b4e158cfc7a853a9f3b6fa3ad7075cb6766aad4fb73b180aef4164",
+      "new_sha256": "73579ea999b4e158cfc7a853a9f3b6fa3ad7075cb6766aad4fb73b180aef4164"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V11_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "9025ba272a053fec1c18d3c68d1dc99e8165a4fdeb06e6ddb8ec107cad3c2b6e",
+      "new_sha256": "9025ba272a053fec1c18d3c68d1dc99e8165a4fdeb06e6ddb8ec107cad3c2b6e"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V11_RELEASE_NOTES.md",
+      "status": "unchanged",
+      "original_sha256": "83a73788fcb06a6e3475b074b385bb08ca89b973aa25ee5b3e882322e5fd77f3",
+      "new_sha256": "83a73788fcb06a6e3475b074b385bb08ca89b973aa25ee5b3e882322e5fd77f3"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V11_VALIDATION.json",
+      "status": "unchanged",
+      "original_sha256": "ea3dfa5b88da70c93443ebdb7aa2db02afc673d403c394f019ba6d17cf0d6e84",
+      "new_sha256": "ea3dfa5b88da70c93443ebdb7aa2db02afc673d403c394f019ba6d17cf0d6e84"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V12_INDEPENDENT_EVIDENCE_PROTOCOL.md",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "fdcb89d019995fbd5dc7be4a4372a06d78cf32006591508b79c887f7ee8fb662"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V12_RELEASE_NOTES.md",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "7b7354037574e3da6ce581ca02d531b1831c3b260e66340ca3b6289952a6c589"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V12_VALIDATION_SUMMARY.json",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "36899c17606909e140e6344c2543b0de12aa33e8118e5014e6d9b4b6176a47d0"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V5_1_EXTENSION_REFERENCE.md",
+      "status": "unchanged",
+      "original_sha256": "919a85d4c6a2bcbaf6e32cc431827fa8d71cc2b252627e90969b0b2229cb5eba",
+      "new_sha256": "919a85d4c6a2bcbaf6e32cc431827fa8d71cc2b252627e90969b0b2229cb5eba"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V6_FILE_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "8640f6dca85b0b58c2cf56ae1e19dc1ecf43c1ac48ed3b92cb373de21798be4a",
+      "new_sha256": "8640f6dca85b0b58c2cf56ae1e19dc1ecf43c1ac48ed3b92cb373de21798be4a"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V6_RELEASE_NOTES.md",
+      "status": "unchanged",
+      "original_sha256": "ec799aee1e3df9de3baf4702cb86f77f5f783b2c8bd11628a0936fca6ce2b073",
+      "new_sha256": "ec799aee1e3df9de3baf4702cb86f77f5f783b2c8bd11628a0936fca6ce2b073"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V6_THREAT_MODEL_EVALUATION.md",
+      "status": "unchanged",
+      "original_sha256": "b10c051d1344e393a00938c46c66ec471e8bc5cad8071e0ab815080c8e531657",
+      "new_sha256": "b10c051d1344e393a00938c46c66ec471e8bc5cad8071e0ab815080c8e531657"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V7_EVALUATION_SECURITY.md",
+      "status": "unchanged",
+      "original_sha256": "b8088d0ea9a41d230a9501bf61b9fd0d487e7d61b8f525971ec06fc74fb455ae",
+      "new_sha256": "b8088d0ea9a41d230a9501bf61b9fd0d487e7d61b8f525971ec06fc74fb455ae"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V7_FILE_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "a980ee4e7d218c228788ee6cf390b819f1f1a86b9c6718d53c52adfed09698d4",
+      "new_sha256": "a980ee4e7d218c228788ee6cf390b819f1f1a86b9c6718d53c52adfed09698d4"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V7_RELEASE_NOTES.md",
+      "status": "unchanged",
+      "original_sha256": "41aa6318e35a18da689a89ba94a0db8fa30e48c1f86b869e6b87e9ebb219e897",
+      "new_sha256": "41aa6318e35a18da689a89ba94a0db8fa30e48c1f86b869e6b87e9ebb219e897"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V8_ATTACHMENT_FORENSICS_SECURITY.md",
+      "status": "unchanged",
+      "original_sha256": "be2824ddcb5d7398d13d81f5fcaca16f86bef6355ee947be803160929c23d8a0",
+      "new_sha256": "be2824ddcb5d7398d13d81f5fcaca16f86bef6355ee947be803160929c23d8a0"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V8_FILE_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "05fd603ff12e95f116263c1215ef1c364e0796c7beea6b4b2463a9571431ef0f",
+      "new_sha256": "05fd603ff12e95f116263c1215ef1c364e0796c7beea6b4b2463a9571431ef0f"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V8_RELEASE_NOTES.md",
+      "status": "unchanged",
+      "original_sha256": "53f359c16d565c4bfc1318008174dd202bbceb556514d6a455806ee8d993fdfb",
+      "new_sha256": "53f359c16d565c4bfc1318008174dd202bbceb556514d6a455806ee8d993fdfb"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V9_BROWSER_PREVIEW.png",
+      "status": "unchanged",
+      "original_sha256": "b3ca75bddd0ddd3b52712c3c06c70b7d798ff920097dca99f9e0a9714b87288c",
+      "new_sha256": "b3ca75bddd0ddd3b52712c3c06c70b7d798ff920097dca99f9e0a9714b87288c"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V9_BROWSER_SMOKE.json",
+      "status": "unchanged",
+      "original_sha256": "dfd1ae2ab800f96e991e72fd004203d62b1cb4ec28a22799e9d394d0d0eb5712",
+      "new_sha256": "dfd1ae2ab800f96e991e72fd004203d62b1cb4ec28a22799e9d394d0d0eb5712"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V9_DETECTION_QUALITY_STUDY.md",
+      "status": "unchanged",
+      "original_sha256": "d82e4245baa782d76d4a1c1e5cd210b29552c580b5b7de3f7eef1463918dbeb0",
+      "new_sha256": "d82e4245baa782d76d4a1c1e5cd210b29552c580b5b7de3f7eef1463918dbeb0"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V9_FILE_PROVENANCE.json",
+      "status": "unchanged",
+      "original_sha256": "bb939d4215c7bc2766c6b25390844035f97ec09db24971612497a651963de562",
+      "new_sha256": "bb939d4215c7bc2766c6b25390844035f97ec09db24971612497a651963de562"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V9_QUALITY_DEVELOPMENT_COMPARISON.json",
+      "status": "unchanged",
+      "original_sha256": "ac780e29b5c207194e268f1ca5446361bbdf5b8e57cde2b9244f7d3951c9cd4e",
+      "new_sha256": "ac780e29b5c207194e268f1ca5446361bbdf5b8e57cde2b9244f7d3951c9cd4e"
+    },
+    {
+      "file": "phishing-email-analyser/docs/V9_V8_BASELINE_CASE_SCORES.json",
+      "status": "unchanged",
+      "original_sha256": "8e427cb98a151003c108d464374a04b08c61b6570c1a653c0c0e294d565bdb6f",
+      "new_sha256": "8e427cb98a151003c108d464374a04b08c61b6570c1a653c0c0e294d565bdb6f"
+    },
+    {
+      "file": "phishing-email-analyser/docs/browser-preview.png",
+      "status": "unchanged",
+      "original_sha256": "8471fa008f50e45205531b1bc13de5843b423555d553c308ee368cc5f9fa0970",
+      "new_sha256": "8471fa008f50e45205531b1bc13de5843b423555d553c308ee368cc5f9fa0970"
+    },
+    {
+      "file": "phishing-email-analyser/docs/browser-verification.json",
+      "status": "unchanged",
+      "original_sha256": "160e34e1a4adb6566e0698c13d613ea49198d1eb5a9b635ed03b72cd2e463a9b",
+      "new_sha256": "160e34e1a4adb6566e0698c13d613ea49198d1eb5a9b635ed03b72cd2e463a9b"
+    },
+    {
+      "file": "phishing-email-analyser/docs/merge-review-verification.json",
+      "status": "unchanged",
+      "original_sha256": "1e0350be6185129bf23372c14fb2d5ad144c7cad216d9378dd5b4948ad42b215",
+      "new_sha256": "1e0350be6185129bf23372c14fb2d5ad144c7cad216d9378dd5b4948ad42b215"
+    },
+    {
+      "file": "phishing-email-analyser/docs/synthetic-benchmark-result.json",
+      "status": "unchanged",
+      "original_sha256": "94d65c8a0abc0ba1d4f1fc00bb550562f8857462b638d83ad8d62cabded95d5e",
+      "new_sha256": "94d65c8a0abc0ba1d4f1fc00bb550562f8857462b638d83ad8d62cabded95d5e"
+    },
+    {
+      "file": "phishing-email-analyser/docs/test-results.json",
+      "status": "unchanged",
+      "original_sha256": "22d7d9ece8770f2e0506b4a76dc768e6bdba0759dbd4ea9efc459a41d095cc6a",
+      "new_sha256": "22d7d9ece8770f2e0506b4a76dc768e6bdba0759dbd4ea9efc459a41d095cc6a"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v6-browser-verification.json",
+      "status": "unchanged",
+      "original_sha256": "98e495340cbb1d79f92027452fb11ece702b5ac2928badf39cc83a8eaacdac15",
+      "new_sha256": "98e495340cbb1d79f92027452fb11ece702b5ac2928badf39cc83a8eaacdac15"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v6-oauth-preview.png",
+      "status": "unchanged",
+      "original_sha256": "f9bc7766a0f406e9e2cf2c7fd03db6c0164579705a628ce6aeabea04772f6c05",
+      "new_sha256": "f9bc7766a0f406e9e2cf2c7fd03db6c0164579705a628ce6aeabea04772f6c05"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v6-synthetic-audit.json",
+      "status": "unchanged",
+      "original_sha256": "aca08c3377dc45a72aa35efff6cb0934f1c8b5825737511cddd3e33c5a92d868",
+      "new_sha256": "aca08c3377dc45a72aa35efff6cb0934f1c8b5825737511cddd3e33c5a92d868"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v6-synthetic-comparison.json",
+      "status": "unchanged",
+      "original_sha256": "590e808840239d3ce143dab33274635726ede36ffea1ed0a2a5d8f5019947105",
+      "new_sha256": "590e808840239d3ce143dab33274635726ede36ffea1ed0a2a5d8f5019947105"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v7-browser-verification.json",
+      "status": "unchanged",
+      "original_sha256": "58bb910cda9fd7d87a98974f9da40f277c3074b761e737caf8eab3c33ccd51c8",
+      "new_sha256": "58bb910cda9fd7d87a98974f9da40f277c3074b761e737caf8eab3c33ccd51c8"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v7-suite-verification.json",
+      "status": "unchanged",
+      "original_sha256": "a5930422ea45763508acc519ed2a1eb692e0b6b7eaffd9edbee5e818b64d8729",
+      "new_sha256": "a5930422ea45763508acc519ed2a1eb692e0b6b7eaffd9edbee5e818b64d8729"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v7-synthetic-split-smoke.json",
+      "status": "unchanged",
+      "original_sha256": "f253fee576922eb313988354a1ff34d9940ad54cc4b38e25ce4a275cc5c6daea",
+      "new_sha256": "f253fee576922eb313988354a1ff34d9940ad54cc4b38e25ce4a275cc5c6daea"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v8-browser-preview.png",
+      "status": "unchanged",
+      "original_sha256": "e29c6edfc4ad8780ad04f5196de12ad2d537b5cfd10bcf436a6a738c25d34751",
+      "new_sha256": "e29c6edfc4ad8780ad04f5196de12ad2d537b5cfd10bcf436a6a738c25d34751"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v8-browser-verification.json",
+      "status": "unchanged",
+      "original_sha256": "e58157ad6d57d611ad5c6a730a095c9973c27e027609611b79e79dc1b21b6c25",
+      "new_sha256": "e58157ad6d57d611ad5c6a730a095c9973c27e027609611b79e79dc1b21b6c25"
+    },
+    {
+      "file": "phishing-email-analyser/docs/v8-suite-verification.json",
+      "status": "unchanged",
+      "original_sha256": "edec6a8a11493e831da96ef05c24c63daf91a83e670496ebdd4f3c6ea3ae578a",
+      "new_sha256": "edec6a8a11493e831da96ef05c24c63daf91a83e670496ebdd4f3c6ea3ae578a"
+    },
+    {
+      "file": "phishing-email-analyser/index.html",
+      "status": "unchanged",
+      "original_sha256": "6872ea7c1858a5af2f4a767a5f1c27458ff2fd634463cd90b5b368030556a865",
+      "new_sha256": "6872ea7c1858a5af2f4a767a5f1c27458ff2fd634463cd90b5b368030556a865"
+    },
+    {
+      "file": "phishing-email-analyser/js/analyser.js",
+      "status": "unchanged",
+      "original_sha256": "88bc6bfd8824e6e390e69170a349cc6a25967aeaacaa80424ee37f4fd393252b",
+      "new_sha256": "88bc6bfd8824e6e390e69170a349cc6a25967aeaacaa80424ee37f4fd393252b"
+    },
+    {
+      "file": "phishing-email-analyser/js/app.js",
+      "status": "unchanged",
+      "original_sha256": "8f1e840ad00121cd283970f552c931899b950c62805c1474ad399dbf747c5882",
+      "new_sha256": "8f1e840ad00121cd283970f552c931899b950c62805c1474ad399dbf747c5882"
+    },
+    {
+      "file": "phishing-email-analyser/js/attachment-security.js",
+      "status": "unchanged",
+      "original_sha256": "cdc802f9d8f329856e86c48e14ddcb2958bd7863589a57859407b5e73d3c483c",
+      "new_sha256": "cdc802f9d8f329856e86c48e14ddcb2958bd7863589a57859407b5e73d3c483c"
+    },
+    {
+      "file": "phishing-email-analyser/js/confusables-data.js",
+      "status": "unchanged",
+      "original_sha256": "8aeef59b24e05fa9c9a279e57bf9177e0b4f99ea3fb5b80da4b08fda9657414b",
+      "new_sha256": "8aeef59b24e05fa9c9a279e57bf9177e0b4f99ea3fb5b80da4b08fda9657414b"
+    },
+    {
+      "file": "phishing-email-analyser/js/content.js",
+      "status": "unchanged",
+      "original_sha256": "a5b5a0676fd18cb342aee1d2f4eccd7af0db1574edfdc4a51d6e682243643f33",
+      "new_sha256": "a5b5a0676fd18cb342aee1d2f4eccd7af0db1574edfdc4a51d6e682243643f33"
+    },
+    {
+      "file": "phishing-email-analyser/js/core.js",
+      "status": "unchanged",
+      "original_sha256": "c8fca451eb1aa6bdadb2b35575a5db2262a5d036c8c2cb9035c88c09188ae382",
+      "new_sha256": "c8fca451eb1aa6bdadb2b35575a5db2262a5d036c8c2cb9035c88c09188ae382"
+    },
+    {
+      "file": "phishing-email-analyser/js/dashboard.js",
+      "status": "unchanged",
+      "original_sha256": "18f3c5ae95fe7279e4f7c1304f552d7c5f83d3433446ab95ae8a274e3f592199",
+      "new_sha256": "18f3c5ae95fe7279e4f7c1304f552d7c5f83d3433446ab95ae8a274e3f592199"
+    },
+    {
+      "file": "phishing-email-analyser/js/domain-security.js",
+      "status": "unchanged",
+      "original_sha256": "30d9e4f018ce0f17005e5eaa20aff1dac05305a2ed195cc2fa6a6debfd37bbeb",
+      "new_sha256": "30d9e4f018ce0f17005e5eaa20aff1dac05305a2ed195cc2fa6a6debfd37bbeb"
+    },
+    {
+      "file": "phishing-email-analyser/js/eml.js",
+      "status": "unchanged",
+      "original_sha256": "769654b43a123ac8ddb2ea3855658036a3a9d95308e1ea34fdb8ff1ca1f3b765",
+      "new_sha256": "769654b43a123ac8ddb2ea3855658036a3a9d95308e1ea34fdb8ff1ca1f3b765"
+    },
+    {
+      "file": "phishing-email-analyser/js/guidance.js",
+      "status": "unchanged",
+      "original_sha256": "a5b95b4e2fed726ff03f47d1f4f66c7f7690dc11c586551c40bd70428e37ae5a",
+      "new_sha256": "a5b95b4e2fed726ff03f47d1f4f66c7f7690dc11c586551c40bd70428e37ae5a"
+    },
+    {
+      "file": "phishing-email-analyser/js/html-security.js",
+      "status": "unchanged",
+      "original_sha256": "6b5ca803f1ab003a3e9e23a760099049f4007ef6036de49bc9d629a167635115",
+      "new_sha256": "6b5ca803f1ab003a3e9e23a760099049f4007ef6036de49bc9d629a167635115"
+    },
+    {
+      "file": "phishing-email-analyser/js/investigation-report.js",
+      "status": "unchanged",
+      "original_sha256": "1a79c98dddc9ba71190c9495db57f0e434ea850fc3bbac3c5ea170612104937c",
+      "new_sha256": "1a79c98dddc9ba71190c9495db57f0e434ea850fc3bbac3c5ea170612104937c"
+    },
+    {
+      "file": "phishing-email-analyser/js/learn.js",
+      "status": "unchanged",
+      "original_sha256": "218173590528aae18d9ebf80ec17675d51bcc646a1ba19c9b355347669b4a037",
+      "new_sha256": "218173590528aae18d9ebf80ec17675d51bcc646a1ba19c9b355347669b4a037"
+    },
+    {
+      "file": "phishing-email-analyser/js/oauth-security.js",
+      "status": "unchanged",
+      "original_sha256": "c4dd5d59ccca340fec843eedf8717ef85a3cb4a8836e1075a167d4f1641e1ecd",
+      "new_sha256": "c4dd5d59ccca340fec843eedf8717ef85a3cb4a8836e1075a167d4f1641e1ecd"
+    },
+    {
+      "file": "phishing-email-analyser/js/psl-data.js",
+      "status": "unchanged",
+      "original_sha256": "f805460c340c76ad9b13fc809f370bdf315abaa8567c504bcb88b5d49f7284ff",
+      "new_sha256": "f805460c340c76ad9b13fc809f370bdf315abaa8567c504bcb88b5d49f7284ff"
+    },
+    {
+      "file": "phishing-email-analyser/js/public-suffix.js",
+      "status": "unchanged",
+      "original_sha256": "c12752ff3acee898b1a6cfa4c0f483c6d109713f9a923184c023c294c7946f6a",
+      "new_sha256": "c12752ff3acee898b1a6cfa4c0f483c6d109713f9a923184c023c294c7946f6a"
+    },
+    {
+      "file": "phishing-email-analyser/js/qr-security.js",
+      "status": "unchanged",
+      "original_sha256": "83eb0a95a211f175f0bb850e955cbc10f9c0332e9b63ff3d28863b65461d8518",
+      "new_sha256": "83eb0a95a211f175f0bb850e955cbc10f9c0332e9b63ff3d28863b65461d8518"
+    },
+    {
+      "file": "phishing-email-analyser/js/rules.js",
+      "status": "unchanged",
+      "original_sha256": "82f712e6d9dfe62d5489c0542ce0c26387425c454cec44ae28c5d35bdb6846d1",
+      "new_sha256": "82f712e6d9dfe62d5489c0542ce0c26387425c454cec44ae28c5d35bdb6846d1"
+    },
+    {
+      "file": "phishing-email-analyser/js/threat-feed.js",
+      "status": "unchanged",
+      "original_sha256": "cfc474b5da40d3d03aa803c26509154480e17b305870c70d8b023ee676d22c33",
+      "new_sha256": "cfc474b5da40d3d03aa803c26509154480e17b305870c70d8b023ee676d22c33"
+    },
+    {
+      "file": "phishing-email-analyser/js/url-security.js",
+      "status": "unchanged",
+      "original_sha256": "ef6f5934762a412246c82d7210efda5a14a2ffdf6e71defeb7af47ca5f99229f",
+      "new_sha256": "ef6f5934762a412246c82d7210efda5a14a2ffdf6e71defeb7af47ca5f99229f"
+    },
+    {
+      "file": "phishing-email-analyser/js/verification-context.js",
+      "status": "unchanged",
+      "original_sha256": "7eb48e249f499db661f6de3dcf1d633fd2b2b8f55e5ca0f7a5e4c5dff682aa0d",
+      "new_sha256": "7eb48e249f499db661f6de3dcf1d633fd2b2b8f55e5ca0f7a5e4c5dff682aa0d"
+    },
+    {
+      "file": "phishing-email-analyser/tests/advanced-security-tests.js",
+      "status": "unchanged",
+      "original_sha256": "811a29c12145adeed4e7ef09fbc7bf6c27ba1c99463c1895d8ef6c1c94c5b898",
+      "new_sha256": "811a29c12145adeed4e7ef09fbc7bf6c27ba1c99463c1895d8ef6c1c94c5b898"
+    },
+    {
+      "file": "phishing-email-analyser/tests/adversarial-tests.js",
+      "status": "unchanged",
+      "original_sha256": "ec4750c4b5ac8fe5a5202af08d9e17563e39a0f9456a6dd7e840db8e4d6e0dbc",
+      "new_sha256": "ec4750c4b5ac8fe5a5202af08d9e17563e39a0f9456a6dd7e840db8e4d6e0dbc"
+    },
+    {
+      "file": "phishing-email-analyser/tests/deployment-policy-tests.js",
+      "status": "unchanged",
+      "original_sha256": "7a581d49832117bc5bbf2218178a0d145b2537492c96048a7113a5719a0ec7e9",
+      "new_sha256": "7a581d49832117bc5bbf2218178a0d145b2537492c96048a7113a5719a0ec7e9"
+    },
+    {
+      "file": "phishing-email-analyser/tests/domain-security-tests.js",
+      "status": "unchanged",
+      "original_sha256": "9059e3f2235e5a958d2142d9c16a5cf5403d90b788945998d65d4690472a8d31",
+      "new_sha256": "9059e3f2235e5a958d2142d9c16a5cf5403d90b788945998d65d4690472a8d31"
+    },
+    {
+      "file": "phishing-email-analyser/tests/fixtures/QUALITY_CHALLENGE_SYNTHETIC.json",
+      "status": "unchanged",
+      "original_sha256": "4a3659ef6faea6209904d002168ad8f44a1c12546d0aee7af2efe0e5d76a7654",
+      "new_sha256": "4a3659ef6faea6209904d002168ad8f44a1c12546d0aee7af2efe0e5d76a7654"
+    },
+    {
+      "file": "phishing-email-analyser/tests/fixtures/SYNTHETIC_LABELLED_URLS.csv",
+      "status": "unchanged",
+      "original_sha256": "e059c0e3648818ccc790e270634d0b25878fb6ece92f982cceefa699adab919c",
+      "new_sha256": "e059c0e3648818ccc790e270634d0b25878fb6ece92f982cceefa699adab919c"
+    },
+    {
+      "file": "phishing-email-analyser/tests/fixtures/SYNTHETIC_SPLIT_RESEARCH.csv",
+      "status": "unchanged",
+      "original_sha256": "d38a7a589c63e13af6a81f4b84fa03cf5ee3e55483ca1fe13b6b8bc1a212e437",
+      "new_sha256": "d38a7a589c63e13af6a81f4b84fa03cf5ee3e55483ca1fe13b6b8bc1a212e437"
+    },
+    {
+      "file": "phishing-email-analyser/tests/fixtures/qr-legitimate-demo.png",
+      "status": "unchanged",
+      "original_sha256": "85c65dfe604f5f5a43cde2a67534837eaa742dd3d88eb1d0d25017625b24e6a0",
+      "new_sha256": "85c65dfe604f5f5a43cde2a67534837eaa742dd3d88eb1d0d25017625b24e6a0"
+    },
+    {
+      "file": "phishing-email-analyser/tests/fixtures/qr-unicode-homograph-demo.png",
+      "status": "unchanged",
+      "original_sha256": "1bb1c8ee9e3ae9a71496cf5bb349b8529983dd997a5e98235e9a0c39d6fbf589",
+      "new_sha256": "1bb1c8ee9e3ae9a71496cf5bb349b8529983dd997a5e98235e9a0c39d6fbf589"
+    },
+    {
+      "file": "phishing-email-analyser/tests/merge-review-tests.js",
+      "status": "unchanged",
+      "original_sha256": "fc3163244f16d51f9f9552b0c6d5d467d514aa59e328037c82f47b6703bda663",
+      "new_sha256": "fc3163244f16d51f9f9552b0c6d5d467d514aa59e328037c82f47b6703bda663"
+    },
+    {
+      "file": "phishing-email-analyser/tests/release-hardening-tests.js",
+      "status": "unchanged",
+      "original_sha256": "e32b28345ab196c33249c70d4dd98f16e057481e8c819dd67557fd0cddb1781c",
+      "new_sha256": "e32b28345ab196c33249c70d4dd98f16e057481e8c819dd67557fd0cddb1781c"
+    },
+    {
+      "file": "phishing-email-analyser/tests/run-tests.js",
+      "status": "unchanged",
+      "original_sha256": "23b856494ed0f24a7375d155e4b8543cf4bfd02adaac68be5326cbc63a5e5845",
+      "new_sha256": "23b856494ed0f24a7375d155e4b8543cf4bfd02adaac68be5326cbc63a5e5845"
+    },
+    {
+      "file": "phishing-email-analyser/tests/secure-property-tests.js",
+      "status": "unchanged",
+      "original_sha256": "4f3bab9d0e446e78b88b9100d48fc047962de5532f959554ce289925bd1804c9",
+      "new_sha256": "4f3bab9d0e446e78b88b9100d48fc047962de5532f959554ce289925bd1804c9"
+    },
+    {
+      "file": "phishing-email-analyser/tests/url-security-tests.js",
+      "status": "unchanged",
+      "original_sha256": "75d47cf15e5e0af88d59769f65a402041f6ec4be399cf88b770743c6475e456d",
+      "new_sha256": "75d47cf15e5e0af88d59769f65a402041f6ec4be399cf88b770743c6475e456d"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v10-public-evaluation-tests.js",
+      "status": "unchanged",
+      "original_sha256": "91a0aad790d8c5a7dc48bef9515b19a1a61d27a3467a16f6f436ca7ba2664bd4",
+      "new_sha256": "91a0aad790d8c5a7dc48bef9515b19a1a61d27a3467a16f6f436ca7ba2664bd4"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v11-verification-quality-tests.js",
+      "status": "unchanged",
+      "original_sha256": "5dcb4b7973f53dcb3496cef868adec736a2dcdec125f82dfd7da3534bf40bb07",
+      "new_sha256": "5dcb4b7973f53dcb3496cef868adec736a2dcdec125f82dfd7da3534bf40bb07"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v12-evidence-study-tests.js",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "23a04e387a3c317279d2516b27c41cb3d520e7eb884b4d03e5527983e64e6654"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v6-security-tests.js",
+      "status": "unchanged",
+      "original_sha256": "8e94225db36f9c9ef9cd1bde6a960d77cb7db09c5f68cb664a7c525e7ef0a632",
+      "new_sha256": "8e94225db36f9c9ef9cd1bde6a960d77cb7db09c5f68cb664a7c525e7ef0a632"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v7-evaluation-tests.js",
+      "status": "unchanged",
+      "original_sha256": "ad0f533abb53c276114aa620bfa7fec251cf449d0b35e509120ef1bf1e342a75",
+      "new_sha256": "ad0f533abb53c276114aa620bfa7fec251cf449d0b35e509120ef1bf1e342a75"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v8-attachment-security-tests.js",
+      "status": "unchanged",
+      "original_sha256": "45cc0bc6d8dcfc0cfa668feb08256cb5028f45aafb427f64081a0ce70d1af7ad",
+      "new_sha256": "45cc0bc6d8dcfc0cfa668feb08256cb5028f45aafb427f64081a0ce70d1af7ad"
+    },
+    {
+      "file": "phishing-email-analyser/tests/v9-quality-tests.js",
+      "status": "unchanged",
+      "original_sha256": "24a05fb47a36a16ac7e98abebaf8d7adc17c261244749c69dd1c1f4e060c6e0f",
+      "new_sha256": "24a05fb47a36a16ac7e98abebaf8d7adc17c261244749c69dd1c1f4e060c6e0f"
+    },
+    {
+      "file": "phishing-email-analyser/tools/benchmark-audit.js",
+      "status": "unchanged",
+      "original_sha256": "9a2c1720c2d3c887cc1eeb1f73a18712c82fa79a7695f2e2ef066ca9745a965f",
+      "new_sha256": "9a2c1720c2d3c887cc1eeb1f73a18712c82fa79a7695f2e2ef066ca9745a965f"
+    },
+    {
+      "file": "phishing-email-analyser/tools/benchmark-v7.js",
+      "status": "unchanged",
+      "original_sha256": "0352b242823414c135934288e91393c527c12ae376489a92666d93fa600a16d3",
+      "new_sha256": "0352b242823414c135934288e91393c527c12ae376489a92666d93fa600a16d3"
+    },
+    {
+      "file": "phishing-email-analyser/tools/benchmark.js",
+      "status": "unchanged",
+      "original_sha256": "e8dd80cdeb612a347259cce38da19de5865cfe4c988e431b4750259e65283a37",
+      "new_sha256": "e8dd80cdeb612a347259cce38da19de5865cfe4c988e431b4750259e65283a37"
+    },
+    {
+      "file": "phishing-email-analyser/tools/browser_smoke.py",
+      "status": "unchanged",
+      "original_sha256": "1220cd5ab05c5267a72143c0149d1eb143f7df20e6d6f0ae7232ed55c05ca324",
+      "new_sha256": "1220cd5ab05c5267a72143c0149d1eb143f7df20e6d6f0ae7232ed55c05ca324"
+    },
+    {
+      "file": "phishing-email-analyser/tools/build-preview.py",
+      "status": "unchanged",
+      "original_sha256": "24a4691b2cf9f1e8bff601e06b8e2cf695e4e2654856dbc9b9b266ccbf2b31c1",
+      "new_sha256": "24a4691b2cf9f1e8bff601e06b8e2cf695e4e2654856dbc9b9b266ccbf2b31c1"
+    },
+    {
+      "file": "phishing-email-analyser/tools/build-release-manifest.py",
+      "status": "modified",
+      "original_sha256": "863360bdae3798f798f10d43567b238bf9435466ea1ab505234be46a97a7827a",
+      "new_sha256": "4755f1da21238a90db21edf4da48f3264cf97d107466b7bfbe05ebbacf6cd737"
+    },
+    {
+      "file": "phishing-email-analyser/tools/fetch-zenodo-validation.py",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "8769be2ad09f61cefb6f6868b38277f48cfc72607eb267ef190659ae6d68f027"
+    },
+    {
+      "file": "phishing-email-analyser/tools/public-corpus-evaluation.js",
+      "status": "unchanged",
+      "original_sha256": "e11d0d2c83a52006a749ae0e0f3e2da8f3211d5cdd795424c1f5f019ffcf5f9d",
+      "new_sha256": "e11d0d2c83a52006a749ae0e0f3e2da8f3211d5cdd795424c1f5f019ffcf5f9d"
+    },
+    {
+      "file": "phishing-email-analyser/tools/quality-audit.js",
+      "status": "unchanged",
+      "original_sha256": "a2a98aa8e65b874dc062658abfbb85afe815a847d7788c28cbbe648994397fc3",
+      "new_sha256": "a2a98aa8e65b874dc062658abfbb85afe815a847d7788c28cbbe648994397fc3"
+    },
+    {
+      "file": "phishing-email-analyser/tools/render-public-evaluation.js",
+      "status": "unchanged",
+      "original_sha256": "ff4bd0dad8a38578973ac4cc766bff05c319d32f7b52181ed22b6a237ce83fc3",
+      "new_sha256": "ff4bd0dad8a38578973ac4cc766bff05c319d32f7b52181ed22b6a237ce83fc3"
+    },
+    {
+      "file": "phishing-email-analyser/tools/update-standards.py",
+      "status": "unchanged",
+      "original_sha256": "d8e3a1b7615a7b30d693420b9820c1e3a76a6ab9e0fedf3f9f528bebd5c37b7c",
+      "new_sha256": "d8e3a1b7615a7b30d693420b9820c1e3a76a6ab9e0fedf3f9f528bebd5c37b7c"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v11-browser-smoke.py",
+      "status": "unchanged",
+      "original_sha256": "bbe095f940e35bb0c02d72b9bc18dd37b746bcc1107e394493583c2a2432e82a",
+      "new_sha256": "bbe095f940e35bb0c02d72b9bc18dd37b746bcc1107e394493583c2a2432e82a"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v12-evidence-study.js",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "4408d9db397f2c6b6a559cb706ec5a5dfd1f89413804460cb44411610679e877"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v12-render-study.js",
+      "status": "added",
+      "original_sha256": null,
+      "new_sha256": "77cb867d99becad5035e86a8dc66d245df1cf91f9b09f006dc759483682e3a8c"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v6_browser_smoke.py",
+      "status": "unchanged",
+      "original_sha256": "76b56ee591667bfa6fd2bb7f3d7e552e34cdf8a05ad6f34a9e51ccb488dc0429",
+      "new_sha256": "76b56ee591667bfa6fd2bb7f3d7e552e34cdf8a05ad6f34a9e51ccb488dc0429"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v7_browser_smoke.py",
+      "status": "unchanged",
+      "original_sha256": "177c76b0e93dc913ed50ee105b3fc26a9e15d59b3c13f1b578c3373973bf07b0",
+      "new_sha256": "177c76b0e93dc913ed50ee105b3fc26a9e15d59b3c13f1b578c3373973bf07b0"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v8-browser-smoke.py",
+      "status": "unchanged",
+      "original_sha256": "6040bdd05bbd81916883f813595a683fe2841f6c196c3a5bbafee016863e156c",
+      "new_sha256": "6040bdd05bbd81916883f813595a683fe2841f6c196c3a5bbafee016863e156c"
+    },
+    {
+      "file": "phishing-email-analyser/tools/v9-browser-quality-smoke.py",
+      "status": "unchanged",
+      "original_sha256": "e0e069af62809655abde53701fc59b25ea31cb29fc86c66f7c5c8b98833d221e",
+      "new_sha256": "e0e069af62809655abde53701fc59b25ea31cb29fc86c66f7c5c8b98833d221e"
+    },
+    {
+      "file": "phishing-email-analyser/tools/vendor-qr-decoder.py",
+      "status": "unchanged",
+      "original_sha256": "8727beff499693dfb2e1a741045bdfd71f98724d0703acb8b36ade8971d1ca77",
+      "new_sha256": "8727beff499693dfb2e1a741045bdfd71f98724d0703acb8b36ade8971d1ca77"
+    },
+    {
+      "file": "phishing-email-analyser/tools/verify-qr-vendor.py",
+      "status": "unchanged",
+      "original_sha256": "c00d41665a492900f523524f1da15baaa67ec5f1aea6155d17d4811dae546fff",
+      "new_sha256": "c00d41665a492900f523524f1da15baaa67ec5f1aea6155d17d4811dae546fff"
+    },
+    {
+      "file": "phishing-email-analyser/tools/verify-release-manifest.py",
+      "status": "unchanged",
+      "original_sha256": "c50bbac3ffa9efa9a852c16020e98216c29c0d8555ae5ce058e562f4f25670e6",
+      "new_sha256": "c50bbac3ffa9efa9a852c16020e98216c29c0d8555ae5ce058e562f4f25670e6"
+    },
+    {
+      "file": "test-phishing-sample.eml",
+      "status": "unchanged",
+      "original_sha256": "93c224a403a8e6a85243ac4796b0e02e7c61210e9a718ca689b02c71b3b860f9",
+      "new_sha256": "93c224a403a8e6a85243ac4796b0e02e7c61210e9a718ca689b02c71b3b860f9"
+    }
+  ]
+}

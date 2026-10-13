@@ -1,0 +1,33 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Parking Services" <payment@parking-notice.example>
+To: recipient@company.example
+Subject: Pay a parking fine by QR
+Message-ID: <p18.synthetic@cybersteps.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="CYBERSTEPS-P18-1"
+
+--CYBERSTEPS-P18-1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Your parking fine must be paid today. Scan the attached QR code and confirm the card details to avoid penalties.
+
+--CYBERSTEPS-P18-1
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="qr-local-sample.png"
+MIME-Version: 1.0
+
+iVBORw0KGgoAAAANSUhEUgAAAM0AAADNAQAAAAAzx8nEAAACMklEQVR4nO1YMY7bMBCclQRQqegf
+UB85013ekWcYkCKedWUeJflekB9IPyA7GrA0KXS5JvEhjagiNxWBKWZB7s7uUogHuGWPGOCT+k+o
+ICIZMAHBTWIPs4iISx9hS/Z4rkqaxkbxMKTfSusDapYSwZn4OnVDeQ0Okm2m9QDF70M+lBFNEb9u
+p/UvVG3iIB31RbsdwigA5MQVL9+MEFMoUYMIicPIADyLnHC2JUJj9eAxiRwSh1EAmgACEK/AhOan
+7zbS+oAC6WtAeAeEDlxQA0IyJn4UrUYuoTAAgBLaITK1fYEkGYUcI5BTDT6n6nXi2wDp8zFa347R
+0hlFnxNIHUYG4GzVBXOlLoHjLQMmHIPbw75ujVGjNEYqLpgtLxtq/R0kOa7JALSE0GGX3KAziuzG
+eNRkFA8TkxfsehsRuiOOuqPqdTcq+jZ9is5Wc2oEr9NNbt8xVyF5owfJbvUN9qgN7HuqJPcNwvra
+RCFHiK+xi2/opuJFq6HkYa7ik1GE9RtpfUCF+yTNYbaqDx3LK85VRGr7AulbRiFJ0iFa3+7UU9oR
+R9RvJ2gSwA4FC8OLLgDoAhwmEZV8QVgb/foy1gNqQUs1pLYvrKuR8A4uyKl61Gan3CAHXxv2ALis
+/W2HeWOWEsiHEmgpuX+WveYNAC8IJy1VfDrkxHVbrT/xvjyeK/anO3QMPyR+0S79beSM0Gosj9oh
+ZNoZ3W+m9QhvleLbdehgj3zkkrpS5PML7pN6gF9g93KLaGpz3wAAAABJRU5ErkJggg==
+
+--CYBERSTEPS-P18-1--

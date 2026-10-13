@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Cloud Team" <notice@redirect-service.example>
+To: recipient@company.example
+Subject: Sign in to review account
+Message-ID: <p21.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+We need to verify your identity. Open https://relay.example/start?next=https%3A%2F%2Fportal.example%2Fgo%3Furl%3Dhttps%253A%252F%252Fpaypa1-check.example%252Flogin and confirm your password.

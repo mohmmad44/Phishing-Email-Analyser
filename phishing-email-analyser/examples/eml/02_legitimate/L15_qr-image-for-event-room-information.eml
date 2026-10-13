@@ -1,0 +1,32 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Office Events" <events@company.example>
+To: recipient@company.example
+Subject: QR location card for team offsite
+Message-ID: <l15.synthetic@cybersteps.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="CYBERSTEPS-L15-1"
+
+--CYBERSTEPS-L15-1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Here is an optional QR to view our event room on the demonstration site. No login, money transfer or credentials are involved.
+
+--CYBERSTEPS-L15-1
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="qr-local-sample.png"
+MIME-Version: 1.0
+
+iVBORw0KGgoAAAANSUhEUgAAALkAAAC5AQAAAABc1qPxAAAB1klEQVR4nO2XMW7bQBBF34gClqlW
+QA6wvEhE+VgGJFu2BOg8KVNZ1EnIE2S3IwFKP4USpKFThRsg8G8I8BWPO9gZDE1M5mUx/R4+wH8A
+kpktklkpM6MxszLjVz1LZ4qWix8DJmkGx7vgaiV+qIcNdCXJqpxygOQap3hSP6PjXeD3IW3YdnM6
+JkFxP6975VqBV5tT/mK2SUNVkvbhfuUzyZfgBSS6/tP3Y+jRX3f8sc93NlhwLVoBF45dzj4Hd0tD
+7RW3XSkbwyyOqUiSsAiuiQTWbJG0z1X2Zeeuq2cNdRg7vVIoY9n9GIaFX3ZSPKmsZVWfSY6kg3SD
+wJqi7U0jLlPZkWLRuiYS1GjEnX0++QJ4rPiy2jI8pYMgHdqcZR9xTXxudfMj7kbRZrztFBqeANtA
+AL+rZnBMR4rboLPfo5uXXKMx5Dr5fcj0az/ibv6QV74Ajp175aThIV5tqG05h2M6uiduQ2+R4BTJ
+2WrJzBYcO9YUDReKbK32e3uVO/uhZj2P411wtRK/My6c2sFWj1Uu+fLnM+1D+W0Vof76WWWf+Vem
+aNNDfDH3FoZqLscUKNTjd1au0wgk12Sc7RGwWAjTCLWUbbb/2l4ZERQCyLbDfYB/An4A7KIFGTfI
+1X0AAAAASUVORK5CYII=
+
+--CYBERSTEPS-L15-1--

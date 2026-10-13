@@ -1,0 +1,23 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Support" <support@notifications.example>
+To: recipient@company.example
+Subject: Your account is secure
+Message-ID: <p11.synthetic@cybersteps.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="CYBERSTEPS-P11-1"
+
+--CYBERSTEPS-P11-1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Your account is safe. No action needed.
+
+--CYBERSTEPS-P11-1
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><a href=3D"https://fake-login.example/enter-password">https://www=
+.paypal.com/signin</a><p>Enter your password to continue.</p></body></html>
+
+--CYBERSTEPS-P11-1--

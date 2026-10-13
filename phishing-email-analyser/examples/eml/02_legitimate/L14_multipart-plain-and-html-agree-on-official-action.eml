@@ -1,0 +1,23 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "IT Operations" <operations@company.example>
+To: recipient@company.example
+Subject: Maintenance notice
+Message-ID: <l14.synthetic@cybersteps.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="CYBERSTEPS-L14-1"
+
+--CYBERSTEPS-L14-1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Scheduled maintenance begins Friday evening. Please save your work; no login or password is requested.
+
+--CYBERSTEPS-L14-1
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Scheduled maintenance Friday. No login or password is requeste=
+d.</p></body></html>
+
+--CYBERSTEPS-L14-1--

@@ -1,0 +1,10 @@
+Date: Thu, 01 Oct 2026 10:00:00 +0000
+From: "Subscription" <updates@account-services.example>
+To: recipient@company.example
+Subject: Subscription about to expire
+Message-ID: <r05.synthetic@cybersteps.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Your subscription is about to expire. Renew now to avoid interruption of service. There is no payment link in this message.
