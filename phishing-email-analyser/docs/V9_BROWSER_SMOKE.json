@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "scenarios": [
+    "defensive password/MFA/macro advice with explicit uncertainty",
+    "malicious sender plus direct secret request",
+    "no browser JavaScript exceptions"
+  ],
+  "caveats": "Locally inlined controlled Chromium harness; meta CSP removed only from harness; no live threat evaluation."
+}

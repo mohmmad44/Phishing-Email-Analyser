@@ -1,0 +1,142 @@
+{
+  "schema_version": 2,
+  "assessment": "Research evaluation; heuristic score is NOT a phishing probability",
+  "dataset_kind": "synthetic",
+  "dataset_sha256": "d38a7a589c63e13af6a81f4b84fa03cf5ee3e55483ca1fe13b6b8bc1a212e437",
+  "provenance": {
+    "source": "",
+    "license": "",
+    "collected": ""
+  },
+  "inputs": {
+    "rows": 20,
+    "valid_unique": 20,
+    "duplicates": 0,
+    "invalid": 0,
+    "conflicting_labels": 0,
+    "group_overlap": 0,
+    "duplicate_cross_split": 0
+  },
+  "class_counts": {
+    "validation": {
+      "phishing": 5,
+      "legitimate": 5
+    },
+    "test": {
+      "phishing": 5,
+      "legitimate": 5
+    }
+  },
+  "calibration_eligible": false,
+  "selection_reason": "Baseline threshold only. Synthetic or insufficient class coverage: NO tuning or calibration permitted.",
+  "target_fpr_upper_wilson": 0.05,
+  "min_validation_recall": 0.5,
+  "selected_threshold": 45,
+  "validation": {
+    "n": 10,
+    "confusion": {
+      "tp": 4,
+      "fp": 0,
+      "tn": 5,
+      "fn": 1
+    },
+    "precision": 1,
+    "recall": 0.8,
+    "f1": 0.88889,
+    "false_positive_rate": 0,
+    "specificity": 1,
+    "wilson_95": {
+      "recall": [
+        0.3755,
+        0.9638
+      ],
+      "false_positive_rate": [
+        0,
+        0.4345
+      ]
+    }
+  },
+  "held_out_test": {
+    "n": 10,
+    "confusion": {
+      "tp": 5,
+      "fp": 0,
+      "tn": 5,
+      "fn": 0
+    },
+    "precision": 1,
+    "recall": 1,
+    "f1": 1,
+    "false_positive_rate": 0,
+    "specificity": 1,
+    "wilson_95": {
+      "recall": [
+        0.5655,
+        1
+      ],
+      "false_positive_rate": [
+        0,
+        0.4345
+      ]
+    }
+  },
+  "baseline_test_45": {
+    "n": 10,
+    "confusion": {
+      "tp": 5,
+      "fp": 0,
+      "tn": 5,
+      "fn": 0
+    },
+    "precision": 1,
+    "recall": 1,
+    "f1": 1,
+    "false_positive_rate": 0,
+    "specificity": 1,
+    "wilson_95": {
+      "recall": [
+        0.5655,
+        1
+      ],
+      "false_positive_rate": [
+        0,
+        0.4345
+      ]
+    }
+  },
+  "test_language_slices": {
+    "unknown": {
+      "n": 10,
+      "confusion": {
+        "tp": 5,
+        "fp": 0,
+        "tn": 5,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.5655,
+          1
+        ],
+        "false_positive_rate": [
+          0,
+          0.4345
+        ]
+      }
+    }
+  },
+  "reliability": null,
+  "warnings": [
+    "Thresholds and calibration only selected on independent validation data with sufficient class coverage and a Wilson FPR gate.",
+    "No recalibration or threshold selection on the held-out test set.",
+    "Real-world quality requires authentic licensed labels, source/time documentation and representative languages.",
+    "Independent samples are assumed by Wilson intervals; campaign clustering can widen uncertainty.",
+    "A fitted reliability map is NOT automatically integrated into browser scoring.",
+    "Even if calibrated on this dataset, dataset drift can invalidate deployed probabilities."
+  ]
+}

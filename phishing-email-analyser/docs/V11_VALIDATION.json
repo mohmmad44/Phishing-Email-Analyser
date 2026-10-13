@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "scenario": "v11 local security regression and syntax validation",
+  "checked_at_utc": "2026-10-13T10:14:29.944829+00:00",
+  "suites": [
+    {
+      "name": "run-tests",
+      "passed": true,
+      "count": 104,
+      "last_line": "104 passed, 0 failed",
+      "stderr": ""
+    },
+    {
+      "name": "domain-security-tests",
+      "passed": true,
+      "count": 66,
+      "last_line": "Domain security: 66 passed, 0 failed",
+      "stderr": ""
+    },
+    {
+      "name": "url-security-tests",
+      "passed": true,
+      "count": 26,
+      "last_line": "URL security: 26 passed, 0 failed",
+      "stderr": ""
+    },
+    {
+      "name": "advanced-security-tests",
+      "passed": true,
+      "count": 36,
+      "last_line": "Advanced security total: 36 passed",
+      "stderr": ""
+    },
+    {
+      "name": "release-hardening-tests",
+      "passed": true,
+      "count": 24,
+      "last_line": "Release hardening: 24 passed",
+      "stderr": ""
+    },
+    {
+      "name": "secure-property-tests",
+      "passed": true,
+      "count": 604,
+      "last_line": "Property/fuzz checks: 604 passed; elapsed 640ms; seed 0x59F3A",
+      "stderr": ""
+    },
+    {
+      "name": "adversarial-tests",
+      "passed": true,
+      "count": 360,
+      "last_line": "Adversarial security suite: 360 passed (including 320 deterministic mutations)",
+      "stderr": ""
+    },
+    {
+      "name": "deployment-policy-tests",
+      "passed": true,
+      "count": 19,
+      "last_line": "Deployment policy: 19 passed",
+      "stderr": ""
+    },
+    {
+      "name": "merge-review-tests",
+      "passed": true,
+      "count": 41,
+      "last_line": "Merge review security regressions: 41 passed",
+      "stderr": ""
+    },
+    {
+      "name": "v6-security-tests",
+      "passed": true,
+      "count": 63,
+      "last_line": "v6 contextual, feed, regression and property checks: 63 passed",
+      "stderr": ""
+    },
+    {
+      "name": "v7-evaluation-tests",
+      "passed": true,
+      "count": 14,
+      "last_line": "v7 research benchmark & QR resilience: 14 passed",
+      "stderr": ""
+    },
+    {
+      "name": "v8-attachment-security-tests",
+      "passed": true,
+      "count": 23,
+      "last_line": "v8 attachment forensics: 23 passed",
+      "stderr": ""
+    },
+    {
+      "name": "v9-quality-tests",
+      "passed": true,
+      "count": 100,
+      "last_line": "v9 quality checks: 100 passed",
+      "stderr": ""
+    },
+    {
+      "name": "v10-public-evaluation-tests",
+      "passed": true,
+      "count": 10,
+      "last_line": "RESULT: 10 public evaluation tests passed",
+      "stderr": ""
+    },
+    {
+      "name": "v11-verification-quality-tests",
+      "passed": true,
+      "count": 21,
+      "last_line": "RESULT: 21 v11 verification-quality tests passed",
+      "stderr": ""
+    }
+  ],
+  "counted_checks": 1511,
+  "original_team_tests": 104,
+  "caveats": [
+    "Regression checks and synthetic examples are not independent real-world accuracy evidence.",
+    "Remote GitHub Actions execution not available in this environment."
+  ]
+}

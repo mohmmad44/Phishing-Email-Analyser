@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checked": [
+    "verification advice for under-evidenced billing request",
+    "numeric risk remained zero",
+    "benign renewal not escalated",
+    "existing suspicious-domain detection preserved",
+    "no page exceptions"
+  ],
+  "limitations": "Controlled offline inline-assets browser test; not a test of deployed CSP headers, malware detection or real-world accuracy."
+}

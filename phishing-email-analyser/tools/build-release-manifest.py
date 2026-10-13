@@ -16,11 +16,11 @@ for file in sorted(repo.rglob('*')):
     b=file.read_bytes()
     entries.append({'path':relative,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
 manifest['source_sha256']=entries
-manifest['release']='5.1-team-integrated'
+manifest['release']='11.0-team-final-evidence-first-verification-triage'
 manifest['documentation']='README.md and phishing-email-analyser/README.md'
 manifest['markdown_files']=sum(1 for entry in entries if entry['path'].endswith('.md'))
-manifest['test_evidence']='phishing-email-analyser/docs/TEAM_V51_INTEGRATION.md'
-manifest['test_limitations']='Security regression suite and synthetic smoke fixtures; no public-corpus accuracy results'
+manifest['test_evidence']='phishing-email-analyser/docs/V11_DECISION_QUALITY_STUDY.md'
+manifest['test_limitations']='v11 adds independent-verification recommendations for under-evidenced action requests, without changing production risk scores, and measures human-review workload separately from phishing classifications. An independent external labeled CSV could not be downloaded in this environment. NO new real-world accuracy or calibrated probabilities are claimed. Remote CI not executed.'
 manifest.pop('reported_checks_passed',None)
 manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print('Wrote',len(entries),'verified source entries')

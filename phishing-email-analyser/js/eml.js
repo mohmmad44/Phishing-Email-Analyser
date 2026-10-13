@@ -137,7 +137,7 @@
     return parts;
   }
 
-  const newBag = () => ({ headers: null, plain: [], html: [], files: [], images: [], inner: [], budget: {parts:0, limited:false, chars:0} });
+  const newBag = () => ({ headers: null, plain: [], html: [], files: [], images: [], documents: [], inner: [], budget: {parts:0, limited:false, chars:0} });
 
   /** Walk one MIME entity (a whole message, or one part of it), filling `bag` with what it finds. */
   function walk(raw, depth, bag) {
@@ -180,6 +180,21 @@
     }
     const name = paramText(cd.params, 'filename') || paramText(ct.params, 'name');
     if (name) bag.files.push(name);
+    // v8: capture ONLY a small, explicit allowlist of document attachments,
+    // decoded from their base64 MIME payload. No arbitrary attachment execution.
+    if (name && /\.(?:pdf|docx|xlsx|pptx|docm|xlsm|pptm)$/i.test(name) && bag.documents.length < 4) {
+      const cte = (getHeader(hs, 'content-transfer-encoding')||'').toLowerCase().trim();
+      if (cte === 'base64' && body.length <= 11*1024*1024) {
+        try {
+          const binary = fromBase64(body);
+          if (binary.length && binary.length <= 8*1024*1024) {
+            const data = new Uint8Array(binary.length);
+            for (let i=0;i<binary.length;i++) data[i]=binary.charCodeAt(i)&255;
+            bag.documents.push({filename:name,bytes:data});
+          } else bag.budget.limited=true;
+        } catch (_) {bag.budget.limited=true;}
+      } else bag.budget.limited=true;
+    }
   }
 
   // ── HTML → text ────────────────────────────────────────────────────────────
@@ -253,7 +268,7 @@
     const names = [...new Set(files.map(oneLine).filter(Boolean))];
 
     const text = [lines.join('\n'), body, names.map(n => 'Attachment: ' + n).join('\n')].filter(Boolean).join('\n\n');
-    return { text, source, files: names, html: htmlSource, images: bag.images, limited: bag.budget.limited }; 
+    return { text, source, files: names, html: htmlSource, images: bag.images, documents: bag.documents, limited: bag.budget.limited }; 
   }
 
   Object.assign(P, { parseEml });

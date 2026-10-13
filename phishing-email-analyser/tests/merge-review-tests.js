@@ -73,7 +73,7 @@ check('qr vendor installation requires pinned digests',()=>{
  const fs=require('node:fs'),path=require('node:path');
  const source=fs.readFileSync(path.join(__dirname,'../tools/vendor-qr-decoder.py'),'utf8');
  assert.match(source,/--js-sha256/);assert.match(source,/--license-sha256/);
- assert.match(source,/actual!=expected.lower\(\)/);
+ assert.match(source,/hashlib\.sha256\(payload\)\.hexdigest\(\)/);assert.match(source,/observed!=expected/);
  assert.match(source,/jsqr@1\.4\.0\/LICENSE/);
 });
 console.log(`Merge review security regressions: ${passed} passed`);

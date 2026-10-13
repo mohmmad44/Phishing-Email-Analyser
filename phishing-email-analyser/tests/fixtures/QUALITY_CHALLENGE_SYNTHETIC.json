@@ -1,0 +1,425 @@
+{
+  "provenance": "Researcher-authored synthetic stress cases, not sourced from live phishing or operational inboxes. May be used for development; NOT independent test of deployment accuracy.",
+  "samples": [
+    {
+      "id": "policy-password",
+      "label": "legitimate",
+      "group": "education",
+      "text": "From: Security Awareness <training@company.example>\nSubject: Password awareness\n\nNever share your password. We will never ask you to send a verification code. Report suspicious emails to security.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "policy-mfa",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Please do not approve unexpected MFA sign-in requests. Do not share any one-time code. Contact IT if someone asks you to share your PIN.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "policy-urls",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Phishing exercises sometimes show fake links like https://paypa1.example/login. This is a training example; do not visit it.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "invoice",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "From: Hetzner Billing <billing@hetzner.com>\nSubject: Rechnung 21948\n\nInvoice 21948 for hosted servers is attached. Payment due in 14 days. Contact our support for questions.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "payment-reminder",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Friendly reminder: your membership payment is due on 31 October. No action if your bank transfer has already been made.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "renewal",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "From: support@mycompany.example\nSubject: Account notice\n\nYour subscription renewal is due in 7 days. Sign in to your account using your saved bookmark. We will never ask for passwords by email.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-logout",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Security update: Your account was locked after multiple incorrect passwords. Contact the helpdesk using the internal telephone directory.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-urgent",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Urgent maintenance: our warehouse is closing today at 17:00. Please dispatch your normal orders before 16:00.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-hr",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Dear Team, please enter your timesheets by the end of the day. Your monthly payslips will follow.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-access",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Please update your password through the company password manager, never by replying to this email.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-vendor",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "From: billing@adobe.com\nSubject: Monthly subscription invoice\n\nYour Adobe payment receipt is ready in your billing portal.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-shipment",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "DHL: Parcel delivery has been completed. You can track your parcel using your existing tracking page.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-legal",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Final reminder: the office fire safety drill begins at 11.00. Please follow the evacuation plan.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-cyber-notes",
+      "label": "legitimate",
+      "group": "education",
+      "text": "The term password request appears in this report, but we did not ask anyone to give a password. Macros and remote desktop software are examples of attack methods.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-macro",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Our IT team has disabled macros in Microsoft Office documents. Please do not enable macros from untrusted files.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-german-bank",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Ihre Sparkasse informiert: Wir werden Sie niemals auffordern, Ihre PIN oder TAN per E-Mail zu bestätigen. Bei Fragen rufen Sie Ihre Filiale an.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-german-urgent",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Dringend: Die Brandschutzübung beginnt heute um 15 Uhr. Bitte verlassen Sie das Gebäude über den Notausgang.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-german-pay",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Sehr geehrte Damen und Herren, anbei die Rechnung für September. Zahlungsziel 14 Tage, die Bankverbindung ist unverändert.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-german-locked",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Ihr Konto wurde aufgrund mehrerer Fehlversuche gesperrt. Wir fragen niemals nach Ihrem Passwort. Bitte kontaktieren Sie Ihre bekannte IT-Hotline.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-german-mfa",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Bitte geben Sie niemals Ihre TAN weiter. Unsere Mitarbeitenden werden nicht nach Ihrem SMS-Code fragen.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-french",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Votre facture est disponible. Ne communiquez jamais votre mot de passe ni votre code de sécurité par e-mail.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-spanish",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Aviso: nunca comparta su contraseña ni su código de verificación con otros.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-calendar",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "From: noreply@calendar.google.com\nSubject: Event invitation\n\nYou are invited to the quarterly review meeting. Respond today if you can attend.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-reset",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Your password reset request was received. If you did not request this change, open the official app manually to review your account.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-doc",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "From: purchasing@company.example\nSubject: Supplier update\n\nAttached is the final invoice.pdf for your records. There is no change to payment instructions.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-account",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Your account settings have been updated successfully. If this was not you, contact customer support using your existing account details.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-newsletter",
+      "label": "legitimate",
+      "group": "operations",
+      "text": "Dear Customer, congratulations on another year of partnership. Our new product catalogue is available on our website.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-free-gmail",
+      "label": "legitimate",
+      "group": "personal",
+      "text": "From: Jane Doe <jane.doe@gmail.com>\nSubject: Quick favour\n\nAre you available to pick up a birthday cake today?",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-case-study",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Today we analyse a malicious email that says: \"Send your password urgently to security@paypa1.example\". This is a sample for the awareness workshop.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "legit-compliance",
+      "label": "legitimate",
+      "group": "education",
+      "text": "Do not disclose confidential information. Never tell anyone your bank account number or send an MFA code.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-basic",
+      "label": "phishing",
+      "group": "credential",
+      "text": "From: Microsoft Support <security@micros0ft-login.example>\nSubject: Action required\n\nUrgent! Your Microsoft 365 account will be suspended. Verify your password at https://micros0ft-login.example/auth within 1 hour.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-simple",
+      "label": "phishing",
+      "group": "credential",
+      "text": "Please send your password to helpdesk@security-fix.example immediately, or your account will be closed.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-german",
+      "label": "phishing",
+      "group": "credential",
+      "text": "From: Sparkasse Service <sicherheit@sparkasse-kundencheck.example>\nSubject: Konto gesperrt\n\nIhr Konto wurde gesperrt. Bitte bestätigen Sie Ihre Online-Banking-PIN innerhalb von 24 Stunden unter https://sparkasse-kundencheck.example/login.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-german-tan",
+      "label": "phishing",
+      "group": "credential",
+      "text": "Sehr geehrte Kundin, handeln Sie sofort. Senden Sie uns den TAN Code zur Freischaltung Ihres Onlinebanking.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-gift",
+      "label": "phishing",
+      "group": "payment",
+      "text": "From: Director <ceo@corp-groups.example>\nSubject: Quick favour\n\nAre you at your desk? I need you to buy €500 in Steam gift cards today. Keep this confidential.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-bank",
+      "label": "phishing",
+      "group": "payment",
+      "text": "From: vendor <ap@vendor-accounts.example>\nSubject: New IBAN\n\nWe have changed our bank details. Please transfer your outstanding payment to the new IBAN today.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-redirect",
+      "label": "phishing",
+      "group": "redirect",
+      "text": "Your account has an unexpected alert. Visit https://example.org/redirect?next=https%3A%2F%2Fpaypa1.example%2Flogin and verify your password.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-idn",
+      "label": "phishing",
+      "group": "unicode",
+      "text": "From: Service <security@pаypal.example>\nSubject: Verification\n\nPlease update your credentials at https://pаypal.example/login immediately.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-domain",
+      "label": "phishing",
+      "group": "unicode",
+      "text": "From: PayPal <support@paypal.com.attacker.example>\nSubject: Account on hold\n\nSign in at https://paypal.com.attacker.example/secure now.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-fake-gmail",
+      "label": "phishing",
+      "group": "sender",
+      "text": "From: Microsoft Office Support <service.office365@gmail.com>\nSubject: Verify login\n\nPlease enter your password to re-enable your account.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-reply",
+      "label": "phishing",
+      "group": "sender",
+      "text": "From: Jane Doe <jane@company.example>\nReply-To: jane-help@different.example\nSubject: Payroll update\n\nSend your bank account details and update your direct deposit now.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-otp",
+      "label": "phishing",
+      "group": "mfa",
+      "text": "This is your bank fraud department. We just sent you a one-time code. Please read that code to the agent so we can stop fraud.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-approve",
+      "label": "phishing",
+      "group": "mfa",
+      "text": "IT Support: Approve the unexpected sign-in request on Microsoft Authenticator now to restore your account.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-macro",
+      "label": "phishing",
+      "group": "attachment",
+      "text": "From: Accounts <billing@unknown.example>\nSubject: Outstanding invoice\n\nOpen the attached invoice.docm and enable macros to see the outstanding payment.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-double",
+      "label": "phishing",
+      "group": "attachment",
+      "text": "Please open invoice.pdf.exe. Run it to view the unpaid invoice immediately.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-callback",
+      "label": "phishing",
+      "group": "callback",
+      "text": "From: Billing <account@unknown.example>\nSubject: Purchase alert\n\nIf you did not authorize the $900 purchase, call our support line immediately at +1 (650) 555-0131.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-french",
+      "label": "phishing",
+      "group": "multilingual",
+      "text": "Votre compte bancaire est suspendu. Confirmez immédiatement votre mot de passe sur https://banque-securite.example/login pour récupérer l’accès.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-spanish",
+      "label": "phishing",
+      "group": "multilingual",
+      "text": "Su cuenta ha sido bloqueada. Confirme su contraseña dentro de 24 horas para evitar la suspensión: https://banco-seguro.example/login.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-german-wire",
+      "label": "phishing",
+      "group": "payment",
+      "text": "Im Auftrag Ihres Geschäftsführers: Überweisen Sie sofort 8.500 EUR an die neue Bankverbindung und informieren Sie niemanden.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-zero",
+      "label": "phishing",
+      "group": "evasion",
+      "text": "Ur​gent: con​firm your pass​word at https://micros0ft-login.example/account",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-misleading",
+      "label": "phishing",
+      "group": "html",
+      "text": "<html><body>Click here: <a href=\"https://paypa1.example/login\">https://paypal.com</a> to verify your password now.</body></html>",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-javascript",
+      "label": "phishing",
+      "group": "html",
+      "text": "<html><a href=\"javascript:alert(1)\">View important account alert</a></html>",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-svg",
+      "label": "phishing",
+      "group": "credential",
+      "text": "Your mail service will be closed today. Enter your password to keep your mailbox.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-oauth",
+      "label": "phishing",
+      "group": "oauth",
+      "text": "Your account is on hold. Open Microsoft device login page and enter this code AB23-XY91 to restore access.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-consent",
+      "label": "phishing",
+      "group": "oauth",
+      "text": "Urgent: sign in and grant the third-party app permission to read your mailbox or the IT department will disable your account.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-crypto",
+      "label": "phishing",
+      "group": "payment",
+      "text": "Send the outstanding balance in Bitcoin to this wallet address right now or the parcel will be returned.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-safe",
+      "label": "phishing",
+      "group": "vishing",
+      "text": "This is the police cyber fraud unit. Transfer your balance to the safe account to prevent theft.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-rat",
+      "label": "phishing",
+      "group": "vishing",
+      "text": "Hello from IT support, install AnyDesk and give us remote access to fix your suspicious logins.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-german-immediate",
+      "label": "phishing",
+      "group": "credential",
+      "text": "Ihr Onlinebanking wurde eingeschränkt. Bitte PIN eingeben und sofort bestätigen unter https://sparkasse-konto-update.example/login.",
+      "origin": "synthetic-hand-authored"
+    },
+    {
+      "id": "phish-mailbox",
+      "label": "phishing",
+      "group": "credential",
+      "text": "From: Admin <admin@outl00k-mail.example>\nSubject: Final warning\n\nYour mailbox will be disabled in 30 minutes. Click the link to confirm your password.",
+      "origin": "synthetic-hand-authored"
+    }
+  ]
+}

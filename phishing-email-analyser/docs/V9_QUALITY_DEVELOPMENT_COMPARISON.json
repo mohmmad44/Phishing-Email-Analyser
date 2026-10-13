@@ -1,0 +1,518 @@
+{
+  "version": "cybersteps.quality-audit.v1",
+  "dataset_kind": "synthetic-development-challenge",
+  "dataset_sha256": "4a3659ef6faea6209904d002168ad8f44a1c12546d0aee7af2efe0e5d76a7654",
+  "provenance": "Researcher-authored synthetic stress cases, not sourced from live phishing or operational inboxes. May be used for development; NOT independent test of deployment accuracy.",
+  "threshold": 45,
+  "sample_count": 60,
+  "duplicate_rows_excluded": 0,
+  "quality": {
+    "count": 60,
+    "confusion": {
+      "tp": 27,
+      "tn": 30,
+      "fp": 0,
+      "fn": 3
+    },
+    "precision": 1,
+    "recall": 0.9,
+    "false_positive_rate": 0,
+    "specificity": 1,
+    "f1": 0.94737,
+    "wilson95": {
+      "recall": [
+        0.7438,
+        0.9654
+      ],
+      "false_positive_rate": [
+        0,
+        0.1135
+      ]
+    }
+  },
+  "comparison": {
+    "baseline": {
+      "count": 60,
+      "confusion": {
+        "tp": 23,
+        "tn": 25,
+        "fp": 5,
+        "fn": 7
+      },
+      "precision": 0.82143,
+      "recall": 0.76667,
+      "false_positive_rate": 0.16667,
+      "specificity": 0.83333,
+      "f1": 0.79311,
+      "wilson95": {
+        "recall": [
+          0.5907,
+          0.8821
+        ],
+        "false_positive_rate": [
+          0.0734,
+          0.3356
+        ]
+      }
+    },
+    "new": {
+      "count": 60,
+      "confusion": {
+        "tp": 27,
+        "tn": 30,
+        "fp": 0,
+        "fn": 3
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "f1": 0.94737,
+      "wilson95": {
+        "recall": [
+          0.7438,
+          0.9654
+        ],
+        "false_positive_rate": [
+          0,
+          0.1135
+        ]
+      }
+    },
+    "changes": [
+      {
+        "id": "policy-mfa",
+        "label": "legitimate",
+        "new_score": 0,
+        "prior_score": 60
+      },
+      {
+        "id": "policy-urls",
+        "label": "legitimate",
+        "new_score": 0,
+        "prior_score": 50
+      },
+      {
+        "id": "legit-cyber-notes",
+        "label": "legitimate",
+        "new_score": 37,
+        "prior_score": 79
+      },
+      {
+        "id": "legit-macro",
+        "label": "legitimate",
+        "new_score": 12,
+        "prior_score": 52
+      },
+      {
+        "id": "legit-case-study",
+        "label": "legitimate",
+        "new_score": 20,
+        "prior_score": 49
+      },
+      {
+        "id": "phish-bank",
+        "label": "phishing",
+        "new_score": 54,
+        "prior_score": 43
+      },
+      {
+        "id": "phish-french",
+        "label": "phishing",
+        "new_score": 56,
+        "prior_score": 14
+      },
+      {
+        "id": "phish-spanish",
+        "label": "phishing",
+        "new_score": 66,
+        "prior_score": 14
+      },
+      {
+        "id": "phish-crypto",
+        "label": "phishing",
+        "new_score": 60,
+        "prior_score": 35
+      }
+    ]
+  },
+  "slices": {
+    "attachment": {
+      "count": 2,
+      "confusion": {
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.3424,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "callback": {
+      "count": 1,
+      "confusion": {
+        "tp": 0,
+        "tn": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": null,
+      "recall": 0,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": null,
+      "wilson95": {
+        "recall": [
+          0,
+          0.7935
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "credential": {
+      "count": 7,
+      "confusion": {
+        "tp": 7,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.6457,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "education": {
+      "count": 11,
+      "confusion": {
+        "tp": 0,
+        "tn": 11,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "f1": null,
+      "wilson95": {
+        "recall": null,
+        "false_positive_rate": [
+          0,
+          0.2588
+        ]
+      }
+    },
+    "evasion": {
+      "count": 1,
+      "confusion": {
+        "tp": 1,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.2065,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "html": {
+      "count": 2,
+      "confusion": {
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.3424,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "mfa": {
+      "count": 2,
+      "confusion": {
+        "tp": 1,
+        "tn": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.5,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 0.66667,
+      "wilson95": {
+        "recall": [
+          0.0945,
+          0.9055
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "multilingual": {
+      "count": 2,
+      "confusion": {
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.3424,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "oauth": {
+      "count": 2,
+      "confusion": {
+        "tp": 1,
+        "tn": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.5,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 0.66667,
+      "wilson95": {
+        "recall": [
+          0.0945,
+          0.9055
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "operations": {
+      "count": 18,
+      "confusion": {
+        "tp": 0,
+        "tn": 18,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "f1": null,
+      "wilson95": {
+        "recall": null,
+        "false_positive_rate": [
+          0,
+          0.1759
+        ]
+      }
+    },
+    "payment": {
+      "count": 4,
+      "confusion": {
+        "tp": 4,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.5101,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "personal": {
+      "count": 1,
+      "confusion": {
+        "tp": 0,
+        "tn": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "f1": null,
+      "wilson95": {
+        "recall": null,
+        "false_positive_rate": [
+          0,
+          0.7935
+        ]
+      }
+    },
+    "redirect": {
+      "count": 1,
+      "confusion": {
+        "tp": 1,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.2065,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "sender": {
+      "count": 2,
+      "confusion": {
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.3424,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "unicode": {
+      "count": 2,
+      "confusion": {
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.3424,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    },
+    "vishing": {
+      "count": 2,
+      "confusion": {
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "false_positive_rate": null,
+      "specificity": null,
+      "f1": 1,
+      "wilson95": {
+        "recall": [
+          0.3424,
+          1
+        ],
+        "false_positive_rate": null
+      }
+    }
+  },
+  "error_analysis": [
+    {
+      "id": "phish-otp",
+      "label": "phishing",
+      "score": 37,
+      "rule_ids": [
+        "mfa-request"
+      ],
+      "status": "investigate",
+      "evidence_strength": "specific-indicator"
+    },
+    {
+      "id": "phish-callback",
+      "label": "phishing",
+      "score": 39,
+      "rule_ids": [
+        "callback",
+        "urgency"
+      ],
+      "status": "investigate",
+      "evidence_strength": "specific-indicator"
+    },
+    {
+      "id": "phish-oauth",
+      "label": "phishing",
+      "score": 40,
+      "rule_ids": [
+        "oauth-device-code-lure",
+        "brand"
+      ],
+      "status": "investigate",
+      "evidence_strength": "specific-indicator"
+    }
+  ],
+  "caveats": [
+    "This diagnostic set was author-written and influenced improvements. It is NOT independent or representative real-world accuracy.",
+    "A zero observed false-positive count in a small synthetic set does not imply zero false positives in deployment.",
+    "This run does not tune or calibrate the production risk score.",
+    "Scores are heuristic ordinal indicators, not verified probabilities.",
+    "Representative independent, independently labeled messages are still necessary for deployment claims."
+  ]
+}

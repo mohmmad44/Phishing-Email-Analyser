@@ -1,0 +1,88 @@
+{
+  "status": "pass",
+  "suite_count": 11,
+  "total_expected_checks": 1357,
+  "all_exit_codes_zero": true,
+  "suites": [
+    {
+      "suite": "run-tests",
+      "expected_count": 104,
+      "exit_code": 0,
+      "summary": "104 passed, 0 failed | ",
+      "seconds": 0.25
+    },
+    {
+      "suite": "domain-security-tests",
+      "expected_count": 66,
+      "exit_code": 0,
+      "summary": "Domain security: 66 passed, 0 failed | ",
+      "seconds": 0.23
+    },
+    {
+      "suite": "url-security-tests",
+      "expected_count": 26,
+      "exit_code": 0,
+      "summary": "URL security: 26 passed, 0 failed",
+      "seconds": 0.1
+    },
+    {
+      "suite": "advanced-security-tests",
+      "expected_count": 36,
+      "exit_code": 0,
+      "summary": " \u2713 MIME parser retrieves bounded image bytes | Advanced security total: 36 passed",
+      "seconds": 0.17
+    },
+    {
+      "suite": "release-hardening-tests",
+      "expected_count": 24,
+      "exit_code": 0,
+      "summary": " \u2713 Benchmark synthetic smoke provenance explicit | Release hardening: 24 passed",
+      "seconds": 0.34
+    },
+    {
+      "suite": "secure-property-tests",
+      "expected_count": 604,
+      "exit_code": 0,
+      "summary": "Property/fuzz checks: 604 passed; elapsed 639ms; seed 0x59F3A",
+      "seconds": 0.72
+    },
+    {
+      "suite": "adversarial-tests",
+      "expected_count": 360,
+      "exit_code": 0,
+      "summary": "Adversarial security suite: 360 passed (including 320 deterministic mutations)",
+      "seconds": 0.24
+    },
+    {
+      "suite": "deployment-policy-tests",
+      "expected_count": 19,
+      "exit_code": 0,
+      "summary": "Deployment policy: 19 passed",
+      "seconds": 0.03
+    },
+    {
+      "suite": "merge-review-tests",
+      "expected_count": 41,
+      "exit_code": 0,
+      "summary": "Merge review security regressions: 41 passed",
+      "seconds": 0.13
+    },
+    {
+      "suite": "v6-security-tests",
+      "expected_count": 63,
+      "exit_code": 0,
+      "summary": "v6 contextual, feed, regression and property checks: 63 passed",
+      "seconds": 0.15
+    },
+    {
+      "suite": "v7-evaluation-tests",
+      "expected_count": 14,
+      "exit_code": 0,
+      "summary": "v7 research benchmark & QR resilience: 14 passed",
+      "seconds": 1.0
+    }
+  ],
+  "benchmark": "20-case synthetic, not real world, calibration refused",
+  "qr_vendor": "not bundled; optional decoder requires independently verified pins",
+  "ci_remote": "not-run"
+}

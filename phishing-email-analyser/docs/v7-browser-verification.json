@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scenario": [
+    "OAuth report rendered",
+    "dashboard preserved",
+    "QR unsupported coverage visible if decoder unavailable",
+    "no browser exceptions"
+  ],
+  "barcode_detector_available": false,
+  "optional_local_jsqr_bundled": false,
+  "limitations": "Controlled local inline-assets test; no deployed HTTP CSP/security-header verification; no real-world benchmark"
+}

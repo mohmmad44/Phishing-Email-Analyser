@@ -67,7 +67,20 @@
           <p class="hint" id="eml-status" role="status"></p>
           <div class="qr-tools"><label for="qr-file"><b>Optional: scan a QR code locally</b></label>
           <input id="qr-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
-          <p class="hint" id="qr-status" role="status">QR decoding requires a browser with BarcodeDetector support. No links are opened.</p></div>
+          <p class="hint" id="qr-status" role="status">QR decoding requires supported browser capabilities or a verified local decoder. No links are opened.</p></div>
+        </div>
+
+        <div class="qr-tools" aria-label="Optional local threat intelligence">
+          <label for="feed-file"><b>Optional: import a local threat-indicator list (JSON)</b></label>
+          <input id="feed-file" type="file" accept="application/json,.json" />
+          <button type="button" id="feed-clear" class="btn small">Clear imported list</button>
+          <p class="hint" id="feed-status" role="status">No list loaded. This tool does not send URLs to reputation services.</p>
+        </div>
+
+        <div class="qr-tools" aria-label="Local document forensics">
+          <label for="attachment-file"><b>Optional: inspect PDF or Office attachment locally</b></label>
+          <input type="file" id="attachment-file" accept=".pdf,.docx,.xlsx,.pptx,.docm,.xlsm,.pptm" />
+          <p class="hint" id="attachment-status" role="status">Static, limited document inspection. No macros, scripts, files or links are executed. Max 8 MiB.</p>
         </div>
 
         <label for="email-input" class="field-label" id="input-label">Paste the suspicious email: headers, body, links and attachment names</label>
@@ -94,6 +107,8 @@
             <li><b>Links</b>: look-alike domains (including Unicode homographs and Punycode IDNs), shortened links, raw IP addresses, "@" tricks and misleading link text</li>
             <li><b>Attachments</b>: executables, double extensions, macro documents and "Enable Content" requests</li>
             <li><b>Sender</b>: SPF/DKIM/DMARC failures, Reply-To mismatches and fake display names</li>
+            <li><b>Authorization abuse</b>: contextual OAuth device-code and consent lures, unexpected MFA approvals</li>
+            <li><b>Threat intelligence</b>: optional local, user-supplied indicator-list matching (unverified source)</li>
             <li><b>Voice calls</b>: impersonated banks and IT staff, "safe accounts" and remote-access requests</li>
           </ul>
           <p class="hint">Pick an example from the menu to see a full report.</p>
@@ -152,6 +167,7 @@
     <h3>How the score works</h3>
     <p>Each warning sign has a weight that reflects how strongly it predicts phishing. A password request counts far more than a generic greeting. Signs that are much more dangerous together, such as a credential request plus a fake link, add a bonus. The total is converted to a 0–100 scale: <b>Low</b> (0–19), <b>Medium</b> (20–44), <b>High</b> (45–69), <b>Critical</b> (70–100).</p>
     <h3>Unicode homograph / brand impersonation checks</h3>
+    <p><b>Document triage (v8):</b> selected PDF and Office Open XML files are scanned locally for bounded, visible links and action indicators, with ZIP safety checks. This does not execute macros or establish that a document is safe. Compressed/encrypted PDF streams, unsupported documents, and QR codes without a compatible decoder may remain uninspected. The report marks these limitations.</p>
     <p>The enhanced investigator inspects locally submitted QR image content when a decoder is available, checks HTML destination attributes, uses a bundled Public Suffix List snapshot, decodes internationalized domain names and checks for selected visually confusable Unicode characters, unusual script mixing, spoofed trusted-domain fragments, and deceptive hosted subdomains. When it finds a brand lookalike, the report identifies Unicode code points and explains the trust-boundary mismatch. <b>International characters and Punycode are not inherently dangerous.</b> The implementation uses a wider ICU-derived confusable mapping with audited overrides and an optional updater for current Unicode UTS #39 data. It does not claim full Unicode UTS #39 conformance. It cannot establish who registered a domain or what a website contains.</p>
     <h3>Limits</h3>
     <p>This is a rule-based teaching tool, not a security product. It can miss well-crafted attacks and can flag legitimate messages. It never visits links, so it cannot see what a website actually contains. A low score is not proof that a message is safe. When in doubt, verify through a channel you trust and report it to your security team.</p>
@@ -171,10 +187,15 @@
 <script src="js/confusables-data.js"></script>
 <script src="js/domain-security.js"></script>
 <script src="js/url-security.js"></script>
+<script src="js/oauth-security.js"></script>
+<script src="js/threat-feed.js"></script>
+<script src="js/verification-context.js"></script>
 <script src="js/analyser.js"></script>
 <script src="js/html-security.js"></script>
 <!-- Optional offline jsQR decoder may be installed by tools/vendor-qr-decoder.py. -->
 <script src="js/qr-security.js"></script>
+<script src="js/investigation-report.js"></script>
+<script src="js/attachment-security.js"></script>
 <script src="js/guidance.js"></script>
 <script src="js/content.js"></script>
 <script src="js/core.js"></script>

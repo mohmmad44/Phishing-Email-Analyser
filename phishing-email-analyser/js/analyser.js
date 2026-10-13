@@ -431,17 +431,39 @@
       title: 'Invisible formatting characters in message', group: 'Language',
       evidence: [hiddenMarks + ' Unicode format character(s) (category Cf)'],
       explain: 'Invisible formatting characters can interrupt keywords and impersonate trusted text. They were removed only for analysis, not executed. They are not malicious on their own.' });
-    // Conservative negation: an explicit anti-phishing instruction is not a
-    // request for secrets. Match the entire local clause, not nearby paragraphs.
-    function defensiveContext(id, start) {
-      if (!['password-request','mfa-request','bank-change','secrecy'].includes(id)) return false;
-      if (id === 'secrecy') {
-        return /(?:will never|would never|do not|don't|never)\s+(?:ask|request|share|send|disclose)/i.test(text.slice(Math.max(0,start-160),start));
-      }
-      const prior = text.slice(Math.max(0, start - 110), start);
-      const clause = prior.slice(Math.max(prior.lastIndexOf('.'), prior.lastIndexOf('!'), prior.lastIndexOf('?'), prior.lastIndexOf('\n')) + 1);
-      return /\b(?:never|will not|would not|won't|do not|don't|does not|doesn't|no one should|we never|kein(?:e|en|er)?|niemals|nicht|geben sie niemals)\b/i.test(clause) &&
-        /\b(?:ask|request|share|send|give|provide|enter|confirm|disclose|reveal|fragen|anfordern|weitergeben|mitteilen|eingeben|bestätigen|senden)\b/i.test(clause);
+    // v9 quality gate: preserve *observations* separately from conclusions.
+    // Defensive clauses and clearly quoted training examples are not requests
+    // for the recipient to disclose a secret. Scope matters: a later positive
+    // instruction in a separate clause remains detectable.
+    const contextualized = [];
+    const sensitive = new Set(['password-request','mfa-request','password-request-de','password-request-fr-es',
+      'bank-change','secrecy','macros','remote-access']);
+    function defensiveContext(id, start, end) {
+      if (!sensitive.has(id)) return false;
+      const before=text.slice(Math.max(0,start-160),start);
+      if(id==='secrecy' && /\b(?:never|will not|do not|must not|should not)\b[^.\n]{0,75}\b(?:ask|share|disclose|send)\b[^.\n]{0,45}\b(?:password|code|pin|credentials)\b/i.test(before))return true;
+      const clauseStart=Math.max(before.lastIndexOf('.'),before.lastIndexOf('!'),before.lastIndexOf('?'),before.lastIndexOf('\n'),before.lastIndexOf(';'));
+      const clause=before.slice(clauseStart+1).slice(-95);
+      const after=text.slice(end,Math.min(text.length,end+70));
+      // Direct prohibition can end at the action itself ("Do not share").
+      const negative=/(?:\b(?:do not|don't|never|will not|would never|won't|does not|must not|should not|not to|cannot|kein(?:e|en|er)?|niemals|nicht|ne (?:jamais|pas)|nunca|no (?:comparta|envíe|confirme))\b)/iu;
+      const warning=/(?:\b(?:warn|avoid|prevent|report|training|guidance|example|reminder|awareness|educat|policy|exercise|scam|phish|fraud)\b|(?:si alguien|ne communiquez|ne partagez|no comparta|aucun employé))/iu;
+      const positiveOverride=/(?:\b(?:instead|but|however|except|nevertheless|in fact|then|please do|you must|jetzt|trotzdem)\b)/iu;
+      if (negative.test(clause) && !positiveOverride.test(clause.slice(clause.search(negative)+4))) return true;
+      // "If someone asks you to share ..." is a cautionary conditional in
+      // policy guidance; don't interpret it as an instruction from the sender.
+      if (/\b(?:if someone asks|if anyone asks|falls jemand|si alguien)\b/iu.test(clause) &&
+          /(warn|report|contact|not|never|niemals|nunca|ne jamais)/iu.test(before+after)) return true;
+      // Quoted command within a labelled case study (but not an actionable link).
+      const prefix=before.slice(-130);
+      const asciiOpen=(prefix.match(/"/g)||[]).length%2===1;
+      const curlyOpen=prefix.lastIndexOf('“')>prefix.lastIndexOf('”') || prefix.lastIndexOf('«')>prefix.lastIndexOf('»');
+      if ((asciiOpen||curlyOpen) && /\b(?:case study|sample|training|exercise|workshop|example|quoted|malicious email)\b/iu.test((before+after).slice(-250))) return true;
+      // "Our team disabled macros" / "Never enable macros" describes
+      // defensive configuration, not an instruction to execute code.
+      if(id==='macros' && /(disabled|block(?:ed)?|never|do not|nicht|niemals)/iu.test(clause))return true;
+      if(id==='remote-access' && warning.test(clause) && !/\b(?:install|download|run|start)\b/iu.test(clause))return true;
+      return false;
     }
 
     // 1) Language rules
@@ -450,7 +472,10 @@
       const evidence = [];
       for (const re of rule.patterns) {
         for (const m of text.matchAll(re)) {
-          if (defensiveContext(rule.id, m.index)) continue;
+          if (defensiveContext(rule.id, m.index, m.index + m[0].length)) {
+            if (contextualized.length < 20) contextualized.push({rule:rule.id,context:'Defensive, conditional or quoted instruction',snippet:m[0].slice(0,90)});
+            continue;
+          }
           if (evidence.length < 6 && !evidence.some(e => e.toLowerCase() === m[0].toLowerCase())) evidence.push(m[0].trim());
           spans.push({ start: m.index, end: m.index + m[0].length, skill: rule.skill, title: rule.title });
         }
@@ -472,6 +497,23 @@
         if (g.evidence.length < 5 && !g.evidence.includes(u.raw)) g.evidence.push(u.raw);
       }
       if (u.issues.length && u.start >= 0) spans.push({ start: u.start, end: u.end, skill: 'links', title: 'Suspicious link' });
+    }
+    // An explicitly identified harmless *illustration* may contain a real
+    // lookalike URL. Preserve the URL evidence, but score it as a training example
+    // ONLY when the message expressly forbids visiting it, with no live call to
+    // click or send credentials. This is a narrow false-positive control.
+    const illustrative = /\b(?:training example|training exercise|awareness workshop|phishing example)\b/i.test(text) &&
+      /\b(?:do not (?:visit|click|open|follow)|never (?:visit|click|open))\b/i.test(text) &&
+      !/\b(?:please|must|need to)\s+(?:click|follow|visit|enter|confirm|send|share)\b/i.test(text);
+    if (illustrative && urls.length) {
+      for (const u of urls) u.educationalExample = true;
+      for (const item of Object.values(linkGroups)) {
+        if (item.id.startsWith('url-')) {
+          contextualized.push({rule:item.id,context:'Explicitly labelled do-not-visit training illustration',snippet:item.evidence[0]||''});
+          item.contextualized=true;item.originalWeight=item.weight;item.weight=0;
+          item.explain += ' This specific URL appears as a labelled do-not-visit educational example; it remains visible for analyst review.';
+        }
+      }
     }
     findings.push(...Object.values(linkGroups));
 
@@ -522,6 +564,38 @@
     }
 
 
+    // v8: read-only document forensic results. Extracted links use the very same
+    // existing URL checks; document indicators remain separately explainable.
+    const documentResults = Array.isArray(effectiveContext.documentResults) ? effectiveContext.documentResults.slice(0,4) : [];
+    for (const doc of documentResults) {
+      if (!doc || !Array.isArray(doc.findings)) continue;
+      for (const item of doc.findings.slice(0,16)) findings.push({
+        id:'document-'+item.id,skill:'attachments',group:'Document forensics',weight:Math.max(0,Math.min(35,item.weight||0)),
+        title:item.title,explain:item.detail,evidence:[doc.name,...(item.evidence||[])].slice(0,5)
+      });
+      for(const rawUrl of (doc.urls||[]).slice(0,40)){
+        if(urls.some(u=>u.raw===rawUrl&&u.source==='document'))continue;
+        const u=analyseUrl(rawUrl);u.start=-1;u.end=-1;u.source='document';urls.push(u);
+        for(const issue of u.issues) findings.push({id:'document-url-'+issue.type,skill:'links',weight:issue.weight,
+          title:'Document link: '+issue.title,explain:issue.detail,evidence:[doc.name,rawUrl],group:'Document forensics'});
+      }
+    }
+
+    if(documentResults.length)for(const doc of documentResults){
+      if(doc.status!=='complete'||(doc.limitations||[]).length){coverage.complete=false;
+        const reason='Document '+String(doc.name||'attachment').slice(0,100)+' was statically inspected only; no safe verdict on unparsed contents.';
+        if(!coverage.messages.includes(reason))coverage.messages.push(reason);
+      }
+    }
+
+    // v6: contextual, offline OAuth authorization-abuse evidence.
+    if (mode === 'email' && P.oauthSecurity) findings.push(...P.oauthSecurity.inspect(text, mode));
+
+    // v6: user-initiated local feed import only. An absent or expired feed
+    // produces NO finding and never means the URL has been cleared.
+    const threatIntel = P.threatFeed ? P.threatFeed.inspect(urls, effectiveContext.threatFeed) : {findings:[],status:'not-available'};
+    findings.push(...threatIntel.findings);
+
     // 5) Combinations that are much more dangerous together
     const has = id => findings.some(f => f.id === id);
     const hasSkill = s => findings.some(f => f.skill === s);
@@ -531,6 +605,11 @@
       combos.push({ id: 'combo-credential-harvest', title: 'Credential-harvesting pattern', weight: 15, explain: 'A request for your login or code combined with a suspicious link or sender is the textbook shape of a credential-phishing attack.' });
     if ((has('payment') || has('bank-change')) && (has('urgency') || has('secrecy') || has('authority')))
       combos.push({ id: 'combo-bec', title: 'Business Email Compromise (BEC) pattern', weight: 15, explain: 'Money requests combined with pressure, secrecy or a "boss" are the hallmark of CEO-fraud / BEC attacks.' });
+    // Destination change plus an instruction to send funds is materially more
+    // specific than an ordinary vendor notification of updated bank details.
+    if (has('bank-change') && /\b(?:transfer|remit|pay|send|wire|überweisen|zahlung (?:an|auf))\b/iu.test(text) && !has('combo-bec'))
+      combos.push({id:'combo-bank-redirection',title:'Payment rerouting instruction',weight:12,
+        explain:'A bank-detail change accompanies a request to send funds. Verify through an independently known supplier contact; this does not prove the account is fraudulent.'});
     if ((has('invoice') || has('macros')) && findings.some(f => f.group === 'Attachments' && f.weight >= 20))
       combos.push({ id: 'combo-malware', title: 'Malware-delivery pattern', weight: 12, explain: 'An invoice-style lure combined with a risky attachment is a classic way to deliver malware such as ransomware loaders.' });
     if (mode === 'voice' && (has('mfa-request') || has('password-request') || has('card-details')) && (has('caller-authority') || has('brand')))
@@ -556,15 +635,60 @@
     findings.length = 0;
     findings.push(...byId.values());
 
-    // 6) Score: add up the weights, then squash into 0–100 so it never exceeds 100.
+    // 6) Evidence-aware risk. The existing numeric heuristic is preserved,
+    // except weak generic language is capped without any actionable security
+    // evidence. This is a conservative triage guardrail, NOT calibrated ML.
     const raw = findings.reduce((s, f) => s + f.weight, 0);
-    const score = Math.round(100 * (1 - Math.exp(-raw / 55)));
+    const scoreUncapped = Math.round(100 * (1 - Math.exp(-raw / 55)));
+    const actionableIds = new Set(['password-request','password-request-de','password-request-fr-es','mfa-request',
+      'bank-change','safe-account','combo-credential-harvest','combo-bec','combo-malware',
+      'combo-vishing','oauth-device-code-lure','oauth-consent-lure']);
+    const hardEvidence=findings.filter(f=>f.weight>0 && (
+      actionableIds.has(f.id) || f.group==='Links' && f.weight>=18 ||
+      /^(sender-|url-|qr-|document-url-|html-url-|html-active-link|html-mismatched|html-form)/.test(f.id) && f.weight>=18 ||
+      f.group==='Local threat feed' || (f.group==='Document forensics' && f.weight>=20) ||
+      f.id==='display-email-spoof' || f.id==='display-brand-mismatch' ||
+      f.id==='att-double-ext' || f.id==='att-executable' || f.id==='att-macro' || f.id==='macros' || f.id==='remote-access' ||
+      f.id==='callback' || f.id==='payment' && f.weight>=22 ||
+      f.id==='prize' && /(card details|credit card|verification charge)/i.test(text) ||
+      f.id==='combo-bank-redirection'
+    ));
+    const weakOnly = hardEvidence.length===0;
+    const score=weakOnly ? Math.min(scoreUncapped,44) : scoreUncapped;
     const level = score >= 70 ? 'Critical' : score >= 45 ? 'High' : score >= 20 ? 'Medium' : 'Low';
+    const explanation = weakOnly && scoreUncapped>score ?
+      'Generic warning signs were present but no independent high-specificity indicator was detected. Risk is capped at Medium for triage; this does not establish safety.' :
+      hardEvidence.length ? 'Elevated concern is supported by actionable or technical indicators; none independently proves maliciousness.' :
+      'Few or only weak indicators were detected; missing indicators do not prove legitimacy.';
+    // v11: a request can need independent verification even when the email
+    // contains too little forensic evidence for a High-risk phishing label.
+    // These cues NEVER change numeric risk, attack verdict or rule weights.
+    const verifyCues = P.verificationContext?.inspect?.(text,mode) || [];
+    const triageDecision = score >= 45 ? 'heightened-concern'
+      : verifyCues.length ? 'independent-verification-recommended' : 'insufficient-evidence';
+    const assessment = {
+      triageDecision, actionCues: verifyCues,
+      recommendedAction: triageDecision==='independent-verification-recommended'
+        ? 'Verify the request through a known official app, independently typed website, or independently obtained contact number. This is not a verified phishing classification.'
+        : triageDecision==='heightened-concern'
+          ? 'Do not interact with the suspicious request until it has been independently verified.'
+          : 'No decisive evidence was available. Do not treat a Low score as proof that the message is safe.',
+      status: !coverage.complete ? 'incomplete' : hardEvidence.length ? 'investigate' : 'limited-evidence',
+      evidenceStrength:hardEvidence.length>=2?'corroborated':hardEvidence.length?'specific-indicator':'weak-or-absent',
+      supportingIds:hardEvidence.slice(0,8).map(f=>f.id),
+      contextualized:contextualized.slice(0,20),scoreUncapped,scoreCapApplied:score<scoreUncapped,
+      explanation,limitations:[
+        'Heuristic risk score, not calibrated probability or a verified malicious verdict.',
+        'Sender authentication results shown in supplied headers are not cryptographically verified.',
+        'No link navigation, live reputation lookup, or malware execution is performed.',
+        ...(!coverage.complete?coverage.messages:[])
+      ]
+    };
     findings.sort((a, b) => b.weight - a.weight);
 
     const skills = [...new Set(findings.map(f => f.skill))];
     return {
-      mode, text, wasHtml, htmlInvestigation, qrResults, score, level, raw, findings, urls, attachments, coverage,
+      mode, text, wasHtml, htmlInvestigation, qrResults, documentResults, threatIntelStatus:threatIntel.status, score, level, raw, assessment, findings, urls, attachments, coverage,
       headers: { from: hdr.from, positives: hdr.positives },
       spans, skills, iocs: extractIocs(text, urls, attachments, hdr.from), analysedAt: new Date().toISOString()
     };

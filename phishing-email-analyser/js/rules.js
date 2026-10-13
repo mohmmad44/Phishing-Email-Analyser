@@ -46,7 +46,7 @@
         /\bby (the )?end of (the )?(day|business)\b/gi, /\bfinal (notice|warning|reminder)\b/gi,
         /\blast chance\b/gi, /\btime[- ]sensitive\b/gi, /\bdon'?t delay\b/gi, /\bright away\b/gi,
         /\bexpires? (today|tonight|soon|in (?:[01] ?(?:hours?|days?)|\d+ ?minutes?))\b/gi, /\bbefore it'?s too late\b/gi,
-        /\bpay now\b/gi, /\b(verify|confirm|update|updated|pay|paid|respond|reply|complete|completed|re-?register|sign in|log ?in)\b[^.\n]{0,40}\bby \d{1,2}([:.]\d{2}|\s?(am|pm))\b/gi, /\b(must|required to|need to|have to)\b[^.\n]{0,40}\b(today|tonight)\b/gi
+        /\bpay now\b/gi, /\b(?:send|transfer|pay|remit)\b[^.\n]{0,80}\b(?:right now|immediately)\b/gi, /\b(verify|confirm|update|updated|pay|paid|respond|reply|complete|completed|re-?register|sign in|log ?in)\b[^.\n]{0,40}\bby \d{1,2}([:.]\d{2}|\s?(am|pm))\b/gi, /\b(must|required to|need to|have to)\b[^.\n]{0,40}\b(today|tonight)\b/gi
       ],
       explain: 'Attackers create a sense of urgency so you act before you think. Real organisations rarely demand action within minutes or hours.'
     },
@@ -102,7 +102,7 @@
         /\bscratch (off )?(the )?(back|code|panel)\b/gi, /\b(wire|bank|telegraphic) transfer\b/gi,
         /\b(bitcoin|btc|cryptocurrency|crypto|usdt|tether|ethereum|wallet address)\b/gi,
         /\b(urgent|immediate|quick|same-day) (payment|transfer|wire)\b/gi,
-        /\bpay(ment)?\b[^.\n]{0,30}\b(immediately|right now|overdue|outstanding)\b/gi,
+        /\bpay(ment)?\b[^.\n]{0,30}\b(immediately|right now|overdue|outstanding)\b/gi, /\bright now\b[^.\n]{0,60}\b(?:send|transfer|pay|bitcoin|wallet)\b/gi,
         /\bwestern union\b|\bmoneygram\b/gi, /\b(unpaid|outstanding|pending) (customs |delivery |shipping |redelivery |postage )?(fee|charge|duty|toll)s?\b/gi, /\b(process|make|send|arrange) (a|the) (payment|transfer|wire)\b/gi
       ],
       explain: 'Requests to buy gift cards, send crypto or make a rushed transfer are hard to reverse. Criminals prefer them because the money is gone almost instantly.'
@@ -205,7 +205,7 @@
       id: 'macros', skill: 'attachments', weight: 30, modes: ['email'],
       title: 'Asks you to enable macros or editing',
       patterns: [
-        /\benable (the )?(content|editing|macros?)\b/gi, /\bmacros?\b/gi, /\bprotected view\b/gi,
+        /\benable (the )?(content|editing|macros?)\b/gi, /\bprotected view\b/gi,
         /\b(document|file) (is |was )?(protected|encrypted|secured)\b[^.\n]{0,60}\b(enable|click|password)\b/gi
       ],
       explain: 'Office macros are small programs inside documents. Attackers ask you to "Enable Content" because that is what lets their malicious code run on your computer.'
@@ -216,8 +216,8 @@
       id: 'remote-access', skill: 'vishing', weight: 30, modes: BOTH,
       title: 'Request to install remote-access software',
       patterns: [
-        /\b(anydesk|teamviewer|quick ?assist|screenconnect|connectwise|logmein|ultraviewer|supremo|rustdesk|splashtop)\b/gi,
-        /\bremote (access|desktop|support|session)\b/gi,
+        /\b(?:install|download|run|open|launch|start|connect (?:to|using)|use|give (?:me|us) access (?:through|via))\b[^.\n]{0,55}\b(?:anydesk|teamviewer|quick ?assist|screenconnect|connectwise|logmein|ultraviewer|supremo|rustdesk|splashtop)\b/gi,
+        /\b(?:grant|give|enable|allow|start|establish|install|accept|approve)\b[^.\n]{0,45}\bremote (?:access|desktop|support|session)\b/gi,
         /\b(install|download)\b[^.\n]{0,30}\b(app|application|software|program|tool)\b[^.\n]{0,40}\b(so (that )?(i|we) can|to let (me|us)|for me to)\b/gi
       ],
       explain: 'Remote-access tools hand control of your computer to the caller. Fake "IT support" and "bank fraud team" callers use them to steal data, install malware or log into your bank.'
@@ -328,6 +328,23 @@
       explain: 'The call to action is where the attack happens. Hover over links (do not click) to see where they really lead.'
     }
   ];
+
+  // v9: narrow multilingual action cues, not brand-only words. Each indicator is
+  // an OBSERVATION; the decision layer must not treat a single phrase as proof.
+  TEXT_RULES.push(
+    { id:'urgency-fr-es',skill:'pressure',weight:12,modes:BOTH,title:'Time pressure (French / Spanish)',
+      patterns:[/\b(?:immédiatement|sans délai|dans les 24 heures|dans un délai de 24 heures)\b/giu,
+        /\b(?:inmediatamente|de inmediato|en un plazo de 24 horas|dentro de 24 horas)\b/giu],
+      explain:'Urgent deadlines can be used in social engineering, but legitimate communications may also contain them.' },
+    { id:'threat-fr-es',skill:'pressure',weight:15,modes:BOTH,title:'Account suspension threat (French / Spanish)',
+      patterns:[/\b(?:votre (?:compte|accès) (?:est |sera )?(?:suspendu|bloqué|désactivé))\b/giu,
+        /\b(?:su cuenta (?:ha sido |será |está )?(?:bloqueada|suspendida|desactivada))\b/giu],
+      explain:'Threats of an account lock can be used to pressure recipients into taking unsafe actions.' },
+    { id:'password-request-fr-es',skill:'credentials',weight:25,modes:BOTH,title:'Request to confirm credentials (French / Spanish)',
+      patterns:[/\b(?:confirmez|saisissez|communiquez|envoyez|partagez|entrez)\b[^.\n]{0,55}\b(?:mot de passe|identifiants|code secret)\b/giu,
+        /\b(?:confirme|introduzca|ingrese|envíe|comparta|facilite)\b[^.\n]{0,55}\b(?:contraseña|clave de acceso|código de verificación)\b/giu],
+      explain:'Credential requests are especially concerning when paired with a link to an unexpected site. Negated safety advice must be evaluated separately.' }
+  );
 
   // Ordered checklist used in the awareness challenge ("which red flags did you spot?")
   const FLAG_CHOICES = [

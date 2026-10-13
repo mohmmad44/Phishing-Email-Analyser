@@ -48,7 +48,7 @@ All three options are free for static sites like this one.
 | `js/app.js` | Connects the Analyse page buttons (including `.eml` drag-and-drop, read locally with `FileReader`) to the engine and draws the report. |
 | `js/learn.js` | The Challenge and Training pages. |
 | `js/dashboard.js` | Personal and team dashboards. |
-| `tests/run-tests.js` | 94 automated checks for the detection engine (`node tests/run-tests.js`). |
+| `tests/run-tests.js` | 104 automated checks for the detection engine (`node tests/run-tests.js`). |
 | `tools/build-preview.py` | Makes a single-file copy (`dist/preview.html`) for previews. Not needed for hosting. |
 
 ---
@@ -90,3 +90,110 @@ This is a rule-based teaching tool. It can miss carefully written attacks and ca
 The original team application and its 104 regression tests are preserved. The integration adds optional local Unicode/IDN domain inspection, Public Suffix List-backed parsing, nested URL parameter inspection, HTML-source investigation, and QR-code analysis where a local browser decoder is available. Pasted MIME uses the existing email parser. For detailed merge decisions, testing and limitations see [the integration report](docs/TEAM_V51_INTEGRATION.md).
 
 Neither extracted URLs nor attachments are executed or visited. Optional QR decoder support is not bundled automatically, and test/synthetic benchmark results do **not** establish real-world detection accuracy.
+
+
+## v6 — additional security investigation (your individual contribution)
+
+- **Contextual OAuth/device-code lure detection** (`js/oauth-security.js`): requests to enter device codes at real authentication portals, suspicious third-party OAuth permission grants, and instructions to approve unexpected authentication prompts. A valid authentication URL is **not itself evidence of phishing**. These are heuristic investigation indicators, not validated exploitation.
+- **User-supplied local indicator feeds** (`js/threat-feed.js`): optional JSON import through the Analyse tab. The app checks exact URL or hostname indicators **only in the browser**; no query leaves the device and the feed is not stored. These lists are **unverified third-party claims**, not confirmed compromise. Expired feeds are ignored. No automatic URL reputation lookups are made.
+- **Benchmark audit** (`tools/benchmark-audit.js`): accept independently sourced *phishing vs legitimate* labels, output confusion matrix, precision/recall/F1/FPR, Wilson uncertainty, language slices, threshold sensitivity, group overlap and data-quality warnings. **Do not optimize a threshold on the evaluation/test set.** Train/validation/test and group/source splits are separate concerns. The bundled examples are entirely synthetic.
+- **v6 regression suite** (`tests/v6-security-tests.js`): authentication lure positives, legitimate notices, Unicode regression, imported-feed parsing/matching/expiry and deterministic whitespace perturbations.
+
+Run the new tests:
+
+```bash
+node tests/v6-security-tests.js
+node tools/benchmark-audit.js --input tests/fixtures/SYNTHETIC_LABELLED_URLS.csv --dataset-kind synthetic
+```
+
+To evaluate a real, independently sourced corpus, create a *licensed, reviewed*, CSV with `label,text` (or `label,url`) columns and optional `language,group,split` columns; labels must be exactly `phishing` and `legitimate`. **Spam != phishing**. The tool does not automatically download or inspect external data. It emits no original email content in its result. Full instructions: [`docs/V6_THREAT_MODEL_EVALUATION.md`](docs/V6_THREAT_MODEL_EVALUATION.md).
+
+To try the **optional local indicator feed**, import a JSON file with shape:
+
+```json
+{
+  "source":"Training fixture / user-supplied feed",
+  "asOf":"2026-10-01T00:00:00Z",
+  "expiresAt":"2026-12-01T00:00:00Z",
+  "entries":[
+    {"kind":"domain","indicator":"example.invalid","threat":"phishing"},
+    {"kind":"url","indicator":"https://example.invalid/login","threat":"suspicious"}
+  ]
+}
+```
+
+This is an **illustrative, non-operational** sample; listing a domain in your own JSON does not make it malicious. Domain matching is exact and does not include subdomains. Lists are capped at 1 MiB / 5,000 records; URL indicators are capped at 2,048 characters. The browser never downloads, follows or contacts an indicator.
+
+**QR caveat:** `BarcodeDetector` varies between browsers; an optional, SHA-256-verified local `jsQR` installation is supported but the library could not be fetched and authenticated in this release environment. Consequently cross-browser QR decoding is **not** claimed as completed. No runtime QR network requests are made.
+
+**Deployment caveat:** `_headers` is honored by compatible hosts (such as Netlify and Cloudflare Pages) but not by GitHub Pages; clickjacking protection (`frame-ancestors 'none'`) requires correct HTTP header deployment, because it is ignored in `<meta>` CSP. Verify in browser network response headers on the deployed site.
+
+
+## v7: research-grade evaluation workflow (new individual contribution)
+
+`tools/benchmark-v7.js` accepts a CSV with **label,text,split,group,language** columns.
+`label` must be `phishing`/`legitimate`, `split` must be `validation`/`test`,
+`group` must identify a campaign or registrable domain consistently across rows.
+Do not provide only spam/ham labels: spam is not necessarily phishing.
+The benchmark rejects duplicate inputs/contradictory labels and cross-split
+campaign leakage. It NEVER exports raw email messages into the metrics JSON.
+
+```sh
+# Offline smoke test: synthetic examples are NOT allowed to change thresholds.
+node tools/benchmark-v7.js --input tests/fixtures/SYNTHETIC_SPLIT_RESEARCH.csv \
+  --dataset-kind synthetic --output docs/v7-synthetic-split-smoke.json
+
+# After downloading and documenting a real labelled corpus on your own machine:
+node tools/benchmark-v7.js --input /private/data/labelled-corpus.csv \
+  --dataset-kind external-labelled --source 'DOI or original corpus identifier' \
+  --license 'verified dataset license' --collected 2026-10-13 \
+  --max-fpr 0.05 --min-recall 0.5 --output /private/reports/external-benchmark.json
+```
+
+Calibration and threshold tuning are **disabled for synthetic or undersized
+corpora**. Even when enabled for sufficiently large external validation/test splits,
+exploratory reliability estimates stay in the benchmark output; they **do not
+silently change the browser's heuristic risk score**. Metadata flags are assertions
+provided by the researcher, not independent proof of licensing or label quality.
+See [v7 research design](docs/V7_EVALUATION_SECURITY.md).
+
+QR images are loaded locally using `createImageBitmap`, or a local data-URL
+`Image` fallback on browsers that lack it. A native `BarcodeDetector` or a separately
+installed, verified jsQR 1.4.0 is still required to decode; unsupported and incomplete
+coverage is prominently reported. Vendor from hash-pinned release assets using
+`tools/vendor-qr-decoder.py`, then run `tools/verify-qr-vendor.py` and rebuild the
+release manifest. No live network requests are made at runtime.
+
+
+## v8 — read-only PDF/Office attachment triage (your security contribution)
+
+- Upload one PDF, DOCX, XLSX, PPTX or macro-enabled Office Open XML file through the **Analyse** tab, or import an `.eml` containing such attachments. Both are processed **locally in this browser**.
+- Cybersteps checks limited visible PDF actions/links, OOXML ZIP relationships and component indicators; extractable images are sent to the existing QR analysis (which needs a supported browser decoder). Extracted links reuse the existing Unicode/IDN/redirect detector.
+- Every scan reports its **coverage limitations**. The result is not antivirus, malware sandboxing, complete PDF parsing, proof that a macro is malicious, or evidence that an external URL was visited. The scanner does not open or execute attachments.
+- Security limits: 8 MiB per file, ZIP entry/expansion caps and CRC validation, at most four documents per `.eml`, no external requests. Some OOXML parts require local `DecompressionStream('deflate-raw')` support.
+- Your browser may still require an independently verified offline jsQR library; it is not silently downloaded or bundled in this release. A `QR unavailable`/`incomplete` result does **not** mean no QR code exists.
+- Read [v8 security design](docs/V8_ATTACHMENT_FORENSICS_SECURITY.md) and [v8 release notes](docs/V8_RELEASE_NOTES.md). Run `node tests/v8-attachment-security-tests.js` and the full GitHub Actions test workflow after merging.
+- The inherited 20-example synthetic benchmark and v7 split-safe infrastructure **cannot establish real-world detection accuracy**. A genuine, licensed, externally labeled dataset remains future work.
+
+## v9.0 — improving the quality of decisions
+
+The application now distinguishes weak phishing-themed language from more
+specific technical or actionable evidence, and shows when an apparent match was
+actually a prohibition or a quotation from security training. The evidence
+panel and exported JSON explicitly identify what the scanner did **not** verify.
+
+Run `node tools/quality-audit.js --baseline docs/V9_V8_BASELINE_CASE_SCORES.json`
+for a reproducible synthetic development-case comparison. **These tests do not
+measure real-world accuracy.** See [`docs/V9_DETECTION_QUALITY_STUDY.md`](docs/V9_DETECTION_QUALITY_STUDY.md)
+for limitations, the remaining missed scenarios, and the independent evaluation
+protocol. Do not interpret a Low/Medium result as clearance to open a link.
+
+## v10 quality evaluation using independent data
+
+Run `node tools/public-corpus-evaluation.js --input evaluation_data/Phishing_validation_emails.csv --output evaluation_data/zenodo-v10-results.json` after independently downloading the published Zenodo file and reviewing its terms. The evaluation is entirely local. It does not transmit email content. Run `node tools/render-public-evaluation.js --input evaluation_data/zenodo-v10-results.json --output evaluation_data/zenodo-v10-summary.md` for a course-report summary. See [`docs/V10_EXTERNAL_QUALITY_EVALUATION.md`](docs/V10_EXTERNAL_QUALITY_EVALUATION.md) for limitations: **this mixed real/generated corpus cannot establish real-world accuracy or justify automatic score calibration**.
+
+## v11 — Verification without false certainty (individual contribution)
+
+Some phishing messages contain a dangerous *request* but no technical evidence (no link destination, sender domain, full headers, or attachment). A Low risk score from these short messages is **not** a reliable safe verdict. Cybersteps now displays a separate **Independent verification recommended** triage result for six evidence-poor action contexts. This is **not a positive phishing classification**, does not alter the numeric score, and recommends using a known contact or independently typed website/app. Safety/awareness guidance and ordinary receipts are excluded by conservative negative controls.
+
+The external-corpus evaluator now measures human-verification queue coverage and benign review burden **separately** from phishing precision, recall and false-positive rate, with optional SHA-256 corpus fingerprint enforcement. These improvements do not establish real-world accuracy or calibrated probabilities; that still requires a licensed, independent held-out corpus. See [`docs/V11_DECISION_QUALITY_STUDY.md`](docs/V11_DECISION_QUALITY_STUDY.md) and `node tests/v11-verification-quality-tests.js`.

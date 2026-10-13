@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checks": [
+    "OAuth detection rendered",
+    "structured export control present",
+    "local threat-list import",
+    "offline IOC matching rendered",
+    "list removal immediately stops hits",
+    "benign instruction no OAuth warning",
+    "no page exceptions"
+  ],
+  "real_world_benchmark": "not-run",
+  "qr_fallback": "optional decoder not bundled",
+  "context": "controlled local-assets Chromium harness (no remote connections; does not verify deployment headers)"
+}

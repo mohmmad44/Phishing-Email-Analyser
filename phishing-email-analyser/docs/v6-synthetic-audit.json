@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "classification": "HEURISTIC, UNCALIBRATED",
+  "dataset_kind": "synthetic",
+  "dataset_sha256": "e059c0e3648818ccc790e270634d0b25878fb6ece92f982cceefa699adab919c",
+  "threshold": 45,
+  "records": {
+    "valid_unique": 20,
+    "rejected": 0,
+    "duplicates": 0,
+    "conflicting_duplicate_labels": 0
+  },
+  "results": {
+    "n": 20,
+    "confusion": {
+      "tp": 9,
+      "tn": 10,
+      "fp": 0,
+      "fn": 1
+    },
+    "precision": 1,
+    "recall": 0.9,
+    "f1": 0.94737,
+    "false_positive_rate": 0,
+    "specificity": 1,
+    "wilson_95": {
+      "recall": [
+        0.59584,
+        0.98212
+      ],
+      "false_positive_rate": [
+        0,
+        0.27754
+      ]
+    }
+  },
+  "slices": {
+    "unknown": {
+      "n": 20,
+      "confusion": {
+        "tp": 9,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "f1": 0.94737,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.59584,
+          0.98212
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    }
+  },
+  "split_results": {
+    "unknown": {
+      "n": 20,
+      "confusion": {
+        "tp": 9,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "f1": 0.94737,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.59584,
+          0.98212
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    }
+  },
+  "group_overlap_across_splits": 0,
+  "threshold_sweep_diagnostic": {
+    "20": {
+      "n": 20,
+      "confusion": {
+        "tp": 10,
+        "tn": 10,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.72246,
+          1
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "30": {
+      "n": 20,
+      "confusion": {
+        "tp": 9,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "f1": 0.94737,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.59584,
+          0.98212
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "40": {
+      "n": 20,
+      "confusion": {
+        "tp": 9,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "f1": 0.94737,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.59584,
+          0.98212
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "45": {
+      "n": 20,
+      "confusion": {
+        "tp": 9,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "f1": 0.94737,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.59584,
+          0.98212
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "50": {
+      "n": 20,
+      "confusion": {
+        "tp": 9,
+        "tn": 10,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1,
+      "recall": 0.9,
+      "f1": 0.94737,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.59584,
+          0.98212
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "60": {
+      "n": 20,
+      "confusion": {
+        "tp": 5,
+        "tn": 10,
+        "fp": 0,
+        "fn": 5
+      },
+      "precision": 1,
+      "recall": 0.5,
+      "f1": 0.66667,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.23659,
+          0.76341
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "70": {
+      "n": 20,
+      "confusion": {
+        "tp": 4,
+        "tn": 10,
+        "fp": 0,
+        "fn": 6
+      },
+      "precision": 1,
+      "recall": 0.4,
+      "f1": 0.57143,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0.16818,
+          0.68733
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    },
+    "80": {
+      "n": 20,
+      "confusion": {
+        "tp": 0,
+        "tn": 10,
+        "fp": 0,
+        "fn": 10
+      },
+      "precision": null,
+      "recall": 0,
+      "f1": null,
+      "false_positive_rate": 0,
+      "specificity": 1,
+      "wilson_95": {
+        "recall": [
+          0,
+          0.27754
+        ],
+        "false_positive_rate": [
+          0,
+          0.27754
+        ]
+      }
+    }
+  },
+  "warnings": [
+    "These are not independently sourced, labelled real-world results.",
+    "Too few distinct samples for stable conclusions.",
+    "No train/test split specified: threshold selection on this evaluation set risks optimistic bias.",
+    "Do not treat spam/ham labels as phishing/legitimate. Validate label origin and licenses.",
+    "No auto-tuning performed. Select a threshold on separate validation data; report metrics on a held-out test set.",
+    "Exact deduplication alone does not prevent near-duplicate or campaign leakage.",
+    "Uncertainty intervals assume independent samples; real campaign samples are often correlated."
+  ]
+}

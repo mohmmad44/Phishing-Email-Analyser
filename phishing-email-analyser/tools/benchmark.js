@@ -36,7 +36,7 @@ const labelIndex=['label','is_phishing','class','target'].map(idx).find(n=>n>=0)
 const textIndex=['url','text','email','message','body'].map(idx).find(n=>n>=0);
 if(labelIndex===undefined || textIndex===undefined) throw Error('CSV requires label + url/text/email/message/body columns');
 require('../js/rules.js');require('../js/psl-data.js');require('../js/public-suffix.js');require('../js/confusables-data.js');
-require('../js/domain-security.js');require('../js/url-security.js');require('../js/html-security.js');require('../js/analyser.js');
+require('../js/domain-security.js');require('../js/url-security.js');require('../js/html-security.js');require('../js/oauth-security.js');require('../js/threat-feed.js');require('../js/analyser.js');
 const P=globalThis.PEA;
 const classes={phishing:1,malicious:1,'1':1,'true':1,legitimate:0,benign:0,'0':0,'false':0,safe:0};
 let confusion={tp:0,tn:0,fp:0,fn:0},duplicates=0,invalid=0,count=0,disagreements=0;

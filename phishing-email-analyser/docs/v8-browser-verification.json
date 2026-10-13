@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scenarios": [
+    "standalone PDF static inspection",
+    "report displays incomplete scope",
+    "compressed OOXML external relationship inspection",
+    "uploaded EML PDF content extraction",
+    "no browser JavaScript errors"
+  ],
+  "limitations": "Inline asset harness removes meta CSP; cannot establish remote security headers or real detection accuracy. Dummy PDF is synthetic. QR fallback unbundled."
+}

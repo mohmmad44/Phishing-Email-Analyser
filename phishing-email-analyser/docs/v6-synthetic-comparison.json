@@ -1,0 +1,53 @@
+{
+  "warning": "Illustrative hand-written synthetic examples, not ground-truth phishing data or real-world accuracy results",
+  "cases": [
+    {
+      "scenario": "Device-code phishing lure",
+      "input_type": "synthetic_example",
+      "baseline_score": 12,
+      "new_score": 41,
+      "new_findings": [
+        "oauth-device-code-lure"
+      ]
+    },
+    {
+      "scenario": "Legitimate description of device login",
+      "input_type": "synthetic_example",
+      "baseline_score": 10,
+      "new_score": 10,
+      "new_findings": []
+    },
+    {
+      "scenario": "OAuth consent phishing lure",
+      "input_type": "synthetic_example",
+      "baseline_score": 20,
+      "new_score": 43,
+      "new_findings": [
+        "oauth-consent-lure"
+      ]
+    },
+    {
+      "scenario": "Routine permission notice",
+      "input_type": "synthetic_example",
+      "baseline_score": 10,
+      "new_score": 10,
+      "new_findings": []
+    },
+    {
+      "scenario": "Unexpected MFA prompt",
+      "input_type": "synthetic_example",
+      "baseline_score": 37,
+      "new_score": 58,
+      "new_findings": [
+        "auth-unexpected-approval"
+      ]
+    },
+    {
+      "scenario": "Routine password reminder",
+      "input_type": "synthetic_example",
+      "baseline_score": 10,
+      "new_score": 10,
+      "new_findings": []
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "baseline": "Cybersteps_Team_Final_Plus_Security_v5.1_Merged.zip",
+  "release": "v6.0-advanced-identity-investigation",
+  "old_files": 56,
+  "new_files": 67,
+  "modified": [
+    {
+      "path": ".github/workflows/security-tests.yml",
+      "baseline_sha256": "7dae62bf34b63d5c1403b046a1c9fd9fb8274215c982600acf44e807230748bb",
+      "v6_sha256": "e00780566edbf21e1a368486552005f7f2a81ac128ea124ff0a9387721c7c5cf"
+    },
+    {
+      "path": "README.md",
+      "baseline_sha256": "2be5990ed087d2de942540fd3d0134eed413773aa878467a0d32f3f0762282d8",
+      "v6_sha256": "f45d9e93bfef50225720ad65962b6ec3eac59189fc47ba135492adc6295b6f6e"
+    },
+    {
+      "path": "phishing-email-analyser/README.md",
+      "baseline_sha256": "e0edc8a9e7ac6ab108caa694060d6a64efdfa914821e54c771964369e28e7bb8",
+      "v6_sha256": "fa8de8f6ac1622e06051b4fa363e9cbe6795becbb1e0402cea9dea93de48ad06"
+    },
+    {
+      "path": "phishing-email-analyser/docs/browser-preview.png",
+      "baseline_sha256": "ea32c9e3ddc0fdcb983e1ddcc29f9e1e9c7b24805273ea5c57a4890a03133dfb",
+      "v6_sha256": "8471fa008f50e45205531b1bc13de5843b423555d553c308ee368cc5f9fa0970"
+    },
+    {
+      "path": "phishing-email-analyser/index.html",
+      "baseline_sha256": "0a52b9933b3caa822325b4c581cba168c1f5f8a4579dac2837e2a4cc3febdf45",
+      "v6_sha256": "19ba25a3d4012d64e3749117658fe965f8068517a7e1bf553759298d49d09109"
+    },
+    {
+      "path": "phishing-email-analyser/js/analyser.js",
+      "baseline_sha256": "81a825992608c3facf604b46a32459ba361a04cac365582af742f4937642f05f",
+      "v6_sha256": "65a22db7dc8bf20da563eda916f5f4f58381376166fdeaaadff93d61e339f9a2"
+    },
+    {
+      "path": "phishing-email-analyser/js/app.js",
+      "baseline_sha256": "a70f587c0d46be15fd86621ffed1bc2541b9552a4c33d990736a43c5a9c5f29d",
+      "v6_sha256": "fce6ecf7c6fada3f44e11c72ab106605546d02411064d95cd8bd90a3074ef974"
+    },
+    {
+      "path": "phishing-email-analyser/tools/benchmark.js",
+      "baseline_sha256": "1f5d08d50a1b00f58cb19c5f52a3e0e646fa700540ea49f008a0b16dca25020a",
+      "v6_sha256": "e8dd80cdeb612a347259cce38da19de5865cfe4c988e431b4750259e65283a37"
+    }
+  ],
+  "added": [
+    "phishing-email-analyser/docs/V6_THREAT_MODEL_EVALUATION.md",
+    "phishing-email-analyser/docs/v6-browser-verification.json",
+    "phishing-email-analyser/docs/v6-oauth-preview.png",
+    "phishing-email-analyser/docs/v6-synthetic-audit.json",
+    "phishing-email-analyser/docs/v6-synthetic-comparison.json",
+    "phishing-email-analyser/js/investigation-report.js",
+    "phishing-email-analyser/js/oauth-security.js",
+    "phishing-email-analyser/js/threat-feed.js",
+    "phishing-email-analyser/tests/v6-security-tests.js",
+    "phishing-email-analyser/tools/benchmark-audit.js",
+    "phishing-email-analyser/tools/v6_browser_smoke.py"
+  ],
+  "byte_identical_existing_count": 48,
+  "byte_identical_existing": [
+    ".gitattributes",
+    ".gitignore",
+    "phishing-email-analyser/RELEASE_MANIFEST.json",
+    "phishing-email-analyser/_headers",
+    "phishing-email-analyser/css/styles.css",
+    "phishing-email-analyser/docs/BASELINE_COMPARISON.csv",
+    "phishing-email-analyser/docs/MERGE_REVIEW_FIXES.md",
+    "phishing-email-analyser/docs/TEAM_BASELINE_PROVENANCE.json",
+    "phishing-email-analyser/docs/TEAM_V51_INTEGRATION.md",
+    "phishing-email-analyser/docs/TEAM_V51_VALIDATION.json",
+    "phishing-email-analyser/docs/V5_1_EXTENSION_REFERENCE.md",
+    "phishing-email-analyser/docs/browser-verification.json",
+    "phishing-email-analyser/docs/merge-review-verification.json",
+    "phishing-email-analyser/docs/synthetic-benchmark-result.json",
+    "phishing-email-analyser/docs/test-results.json",
+    "phishing-email-analyser/js/confusables-data.js",
+    "phishing-email-analyser/js/content.js",
+    "phishing-email-analyser/js/core.js",
+    "phishing-email-analyser/js/dashboard.js",
+    "phishing-email-analyser/js/domain-security.js",
+    "phishing-email-analyser/js/eml.js",
+    "phishing-email-analyser/js/guidance.js",
+    "phishing-email-analyser/js/html-security.js",
+    "phishing-email-analyser/js/learn.js",
+    "phishing-email-analyser/js/psl-data.js",
+    "phishing-email-analyser/js/public-suffix.js",
+    "phishing-email-analyser/js/qr-security.js",
+    "phishing-email-analyser/js/rules.js",
+    "phishing-email-analyser/js/url-security.js",
+    "phishing-email-analyser/tests/advanced-security-tests.js",
+    "phishing-email-analyser/tests/adversarial-tests.js",
+    "phishing-email-analyser/tests/deployment-policy-tests.js",
+    "phishing-email-analyser/tests/domain-security-tests.js",
+    "phishing-email-analyser/tests/fixtures/SYNTHETIC_LABELLED_URLS.csv",
+    "phishing-email-analyser/tests/fixtures/qr-legitimate-demo.png",
+    "phishing-email-analyser/tests/fixtures/qr-unicode-homograph-demo.png",
+    "phishing-email-analyser/tests/merge-review-tests.js",
+    "phishing-email-analyser/tests/release-hardening-tests.js",
+    "phishing-email-analyser/tests/run-tests.js",
+    "phishing-email-analyser/tests/secure-property-tests.js",
+    "phishing-email-analyser/tests/url-security-tests.js",
+    "phishing-email-analyser/tools/browser_smoke.py",
+    "phishing-email-analyser/tools/build-preview.py",
+    "phishing-email-analyser/tools/build-release-manifest.py",
+    "phishing-email-analyser/tools/update-standards.py",
+    "phishing-email-analyser/tools/vendor-qr-decoder.py",
+    "phishing-email-analyser/tools/verify-release-manifest.py",
+    "test-phishing-sample.eml"
+  ],
+  "scope_limitations": [
+    "No independently sourced labeled phishing corpus included",
+    "No cross-browser QR decoder library bundled",
+    "No live reputation service or provider connection",
+    "Uncalibrated heuristic score"
+  ]
+}

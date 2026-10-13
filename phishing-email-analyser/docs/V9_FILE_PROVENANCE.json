@@ -1,0 +1,63 @@
+{
+  "source_archive": "Cybersteps_Team_Final_Advanced_Security_v8.0.zip",
+  "notes": "Source comparison. Manifest excluded due to expected release rebuild.",
+  "untouched": 80,
+  "modified": 8,
+  "added": 10,
+  "removed": 0,
+  "modified_files": [
+    {
+      "path": ".github/workflows/security-tests.yml",
+      "v8_sha256": "70a360db31842ebbc3a920d841af92154483b35420108c5c57001f308d266b7d",
+      "v9_sha256": "57d2635c3d24755e2116a77171cc2054819bc2cec78721b6f57e4d925154514f"
+    },
+    {
+      "path": "README.md",
+      "v8_sha256": "677ffa182afa42769bfe123837f3b12721210037d8ed98c7f9161151c1826128",
+      "v9_sha256": "f2597dcb8e08aa8481ed59b94204e56f8808b022d86f95b9826531700a9be8c0"
+    },
+    {
+      "path": "phishing-email-analyser/README.md",
+      "v8_sha256": "e3701c9db9a7ff09d8641d4dcc984982f83e836098205d33c4b0ea765dbd0c8a",
+      "v9_sha256": "995fce6cec4fdd388113e2eb996aad187a913823bd6e96f9decc16be67645cb5"
+    },
+    {
+      "path": "phishing-email-analyser/js/analyser.js",
+      "v8_sha256": "046aa92beea50448fdf2f50f47969828f4ec4ce92c478a697db66e8012c89a92",
+      "v9_sha256": "46f5225d1e2cb9bc47694d5b5afa55edff55ae177355799af107411cd539bf68"
+    },
+    {
+      "path": "phishing-email-analyser/js/app.js",
+      "v8_sha256": "5173836e521c8384bb125f798ada349a649c40d49dd23671ca7ecea2496d9ba3",
+      "v9_sha256": "3efe49cdb1f7dff70f336e22e5ba69f7109303f64f928c43ceb361e7f4829028"
+    },
+    {
+      "path": "phishing-email-analyser/js/investigation-report.js",
+      "v8_sha256": "fd8b5931b0a37832d2e475e29945dd63855dc549c399f760467ed96a342567f9",
+      "v9_sha256": "b9f57a30229772463ee4978b9fdef36272dca0ac4d5a48aa88a4dd5b3705dc8b"
+    },
+    {
+      "path": "phishing-email-analyser/js/rules.js",
+      "v8_sha256": "d0c323f5811e3abc2605d00d630a2519f9c809552d15deebecb7219ad4453c5b",
+      "v9_sha256": "82f712e6d9dfe62d5489c0542ce0c26387425c454cec44ae28c5d35bdb6846d1"
+    },
+    {
+      "path": "phishing-email-analyser/tools/build-release-manifest.py",
+      "v8_sha256": "5c64429b43bebcf5dd716ab1cb93a47dfd93602f1d5c42fdae3c28179080a59a",
+      "v9_sha256": "100ce4cb3b31adafa6444aa90b05265e7f7ed8bb0a0a13a50475461ef0748460"
+    }
+  ],
+  "new_files": [
+    "phishing-email-analyser/docs/V9_BROWSER_PREVIEW.png",
+    "phishing-email-analyser/docs/V9_BROWSER_SMOKE.json",
+    "phishing-email-analyser/docs/V9_DETECTION_QUALITY_STUDY.md",
+    "phishing-email-analyser/docs/V9_FILE_PROVENANCE.json",
+    "phishing-email-analyser/docs/V9_QUALITY_DEVELOPMENT_COMPARISON.json",
+    "phishing-email-analyser/docs/V9_V8_BASELINE_CASE_SCORES.json",
+    "phishing-email-analyser/tests/fixtures/QUALITY_CHALLENGE_SYNTHETIC.json",
+    "phishing-email-analyser/tests/v9-quality-tests.js",
+    "phishing-email-analyser/tools/quality-audit.js",
+    "phishing-email-analyser/tools/v9-browser-quality-smoke.py"
+  ],
+  "removed_files": []
+}

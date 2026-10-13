@@ -1,0 +1,245 @@
+{
+  "version": "v8-original-synthetic-development",
+  "cases": [
+    {
+      "id": "policy-password",
+      "score": 37
+    },
+    {
+      "id": "policy-mfa",
+      "score": 60
+    },
+    {
+      "id": "policy-urls",
+      "score": 50
+    },
+    {
+      "id": "invoice",
+      "score": 0
+    },
+    {
+      "id": "payment-reminder",
+      "score": 33
+    },
+    {
+      "id": "renewal",
+      "score": 0
+    },
+    {
+      "id": "legit-logout",
+      "score": 24
+    },
+    {
+      "id": "legit-urgent",
+      "score": 20
+    },
+    {
+      "id": "legit-hr",
+      "score": 20
+    },
+    {
+      "id": "legit-access",
+      "score": 37
+    },
+    {
+      "id": "legit-vendor",
+      "score": 0
+    },
+    {
+      "id": "legit-shipment",
+      "score": 10
+    },
+    {
+      "id": "legit-legal",
+      "score": 20
+    },
+    {
+      "id": "legit-cyber-notes",
+      "score": 79
+    },
+    {
+      "id": "legit-macro",
+      "score": 52
+    },
+    {
+      "id": "legit-german-bank",
+      "score": 43
+    },
+    {
+      "id": "legit-german-urgent",
+      "score": 20
+    },
+    {
+      "id": "legit-german-pay",
+      "score": 0
+    },
+    {
+      "id": "legit-german-locked",
+      "score": 24
+    },
+    {
+      "id": "legit-german-mfa",
+      "score": 37
+    },
+    {
+      "id": "legit-french",
+      "score": 0
+    },
+    {
+      "id": "legit-spanish",
+      "score": 0
+    },
+    {
+      "id": "legit-calendar",
+      "score": 10
+    },
+    {
+      "id": "legit-reset",
+      "score": 0
+    },
+    {
+      "id": "legit-doc",
+      "score": 40
+    },
+    {
+      "id": "legit-account",
+      "score": 0
+    },
+    {
+      "id": "legit-newsletter",
+      "score": 30
+    },
+    {
+      "id": "legit-free-gmail",
+      "score": 35
+    },
+    {
+      "id": "legit-case-study",
+      "score": 49
+    },
+    {
+      "id": "legit-compliance",
+      "score": 37
+    },
+    {
+      "id": "phish-basic",
+      "score": 86
+    },
+    {
+      "id": "phish-simple",
+      "score": 61
+    },
+    {
+      "id": "phish-german",
+      "score": 94
+    },
+    {
+      "id": "phish-german-tan",
+      "score": 54
+    },
+    {
+      "id": "phish-gift",
+      "score": 73
+    },
+    {
+      "id": "phish-bank",
+      "score": 43
+    },
+    {
+      "id": "phish-redirect",
+      "score": 46
+    },
+    {
+      "id": "phish-idn",
+      "score": 96
+    },
+    {
+      "id": "phish-domain",
+      "score": 93
+    },
+    {
+      "id": "phish-fake-gmail",
+      "score": 79
+    },
+    {
+      "id": "phish-reply",
+      "score": 58
+    },
+    {
+      "id": "phish-otp",
+      "score": 37
+    },
+    {
+      "id": "phish-approve",
+      "score": 63
+    },
+    {
+      "id": "phish-macro",
+      "score": 76
+    },
+    {
+      "id": "phish-double",
+      "score": 80
+    },
+    {
+      "id": "phish-callback",
+      "score": 39
+    },
+    {
+      "id": "phish-french",
+      "score": 14
+    },
+    {
+      "id": "phish-spanish",
+      "score": 14
+    },
+    {
+      "id": "phish-german-wire",
+      "score": 75
+    },
+    {
+      "id": "phish-zero",
+      "score": 66
+    },
+    {
+      "id": "phish-misleading",
+      "score": 94
+    },
+    {
+      "id": "phish-javascript",
+      "score": 63
+    },
+    {
+      "id": "phish-svg",
+      "score": 52
+    },
+    {
+      "id": "phish-oauth",
+      "score": 40
+    },
+    {
+      "id": "phish-consent",
+      "score": 61
+    },
+    {
+      "id": "phish-crypto",
+      "score": 35
+    },
+    {
+      "id": "phish-safe",
+      "score": 45
+    },
+    {
+      "id": "phish-rat",
+      "score": 51
+    },
+    {
+      "id": "phish-german-immediate",
+      "score": 70
+    },
+    {
+      "id": "phish-mailbox",
+      "score": 61
+    }
+  ]
+}
