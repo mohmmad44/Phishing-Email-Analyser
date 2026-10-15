@@ -207,3 +207,33 @@ See [`docs/V12_INDEPENDENT_EVIDENCE_PROTOCOL.md`](docs/V12_INDEPENDENT_EVIDENCE_
 ## Offline `.eml` demonstration fixtures (v12.2)
 
 The project includes **48 fictional, SHA-256-verified `.eml` examples** with actual MIME encodings, HTML alternatives, Unicode spoofing, QR-image and document attachments, and legitimate business/security messages. Browse `examples/eml/README.md`, drag an example onto the Analyse page, or run `node tests/example-eml-validation-tests.js`. Results are recorded in `examples/eml/VALIDATION_RESULTS.md`. These are **educational synthetic examples**, not real-world phishing-accuracy evidence.
+
+
+## QR decoder: Windows one-time installation (v12.2 QR fix)
+
+If `typeof BarcodeDetector` and `typeof window.jsQR` are both `undefined`,
+**a QR decoder is not installed**. To enable QR image decoding on Windows:
+
+1. Extract the complete ZIP. An internet connection is needed **only once** for installation.
+2. In `phishing-email-analyser/`, double-click `INSTALL_QR_DECODER_WINDOWS.cmd` and follow the console output.
+3. It downloads **jsQR 1.4.0** from npm and compares the downloaded `.tgz` archive against a hard-coded published **SHA-512 integrity value** before installing anything. It includes the Apache-2.0 license and an SHA-256 lockfile.
+4. Close and reopen `index.html` or hard-reload the Live Server tab.
+5. In F12 Console run `typeof window.jsQR` (should be `"function"`). Test the P18 QR example in `examples/eml/01_phishing/`.
+
+If Python is installed, use `python tools/install-qr-decoder.py` instead.
+For offline machines, download `https://registry.npmjs.org/jsqr/-/jsqr-1.4.0.tgz`
+on a trusted networked computer, then use
+`python tools/install-qr-decoder.py --archive /path/to/jsqr-1.4.0.tgz`.
+The archive is always checked against the pinned integrity value.
+
+**Privacy**: once installed, the decoder loads from `js/vendor/jsQR.js` and
+QR image pixels are processed in the browser; no external QR script or analysis
+endpoint is used at runtime. QR decoding does **not** establish whether the URL is
+malicious. Local QR processing is bounded, does not navigate, and may inspect
+only one QR symbol with jsQR in each image.
+
+**Packaging/CI**: if committing the newly installed `js/vendor` library, also
+commit its license and lockfile, then run `python tools/build-release-manifest.py`,
+`python tools/verify-qr-vendor.py` and `python tools/verify-release-manifest.py`.
+The source ZIP distributed before a verified network install does not itself
+contain jsQR; it provides an integrity-pinned installer.

@@ -16,11 +16,11 @@ for file in sorted(repo.rglob('*')):
     b=file.read_bytes()
     entries.append({'path':relative,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
 manifest['source_sha256']=entries
-manifest['release']='12.2-team-final-synthetic-eml-validation-pack'
+manifest['release']='12.2.1-qr-decoder-one-time-pinned-installer'
 manifest['documentation']='README.md and phishing-email-analyser/README.md'
 manifest['markdown_files']=sum(1 for entry in entries if entry['path'].endswith('.md'))
 manifest['test_evidence']='phishing-email-analyser/docs/V12_2_SAMPLE_PACK_RELEASE.md'
-manifest['test_limitations']='v12.2 adds 48 entirely fictional MIME demonstration emails. The 20/24 phishing High-risk and 0/18 legitimate High-risk observations are synthetic regression behavior, NOT independent real-world accuracy evidence. A separate limited v12.1 public corpus exploratory study remains documented. QR image recognition is browser/decoder dependent; original public dataset and private case review are excluded.'
+manifest['test_limitations']='v12.2 adds 48 entirely fictional MIME demonstration emails. The 20/24 phishing High-risk and 0/18 legitimate High-risk observations are synthetic regression behavior, NOT independent real-world accuracy evidence. A separate limited v12.1 public corpus exploratory study remains documented. QR decoding requires a one-time verified npm jsQR install where BarcodeDetector is unavailable; this package includes the pinned installer, not unverified third-party bytes. Original public dataset and private case review are excluded.'
 manifest.pop('reported_checks_passed',None)
 manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print('Wrote',len(entries),'verified source entries')

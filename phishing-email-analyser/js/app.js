@@ -85,7 +85,7 @@
     const coverage=[];
     if (blobs.length>4) coverage.push('Only the first four submitted images were scanned; additional images remain uninspected.');
     if (!P.qrSecurity || !P.qrSecurity.supported()) {
-      $('qr-status').textContent='QR decoding unavailable in this browser; static URL and email analysis remains available.';
+      $('qr-status').textContent='QR decoding unavailable: install the pinned local jsQR decoder using INSTALL_QR_DECODER_WINDOWS.cmd (Windows) or tools/install-qr-decoder.py.';
       analysisContext.qrCoverage=['QR image inspection unsupported: neither a compatible native decoder nor a verified local decoder is usable.'];
       if ($('email-input').value.trim()) run(false,true);
       return;

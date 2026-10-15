@@ -1,11 +1,11 @@
 {
   "project": "Cybersteps Phishing Email Analyzer",
-  "release": "12.2-team-final-synthetic-eml-validation-pack",
+  "release": "12.2.1-qr-decoder-one-time-pinned-installer",
   "package_format": "single-current-release",
   "documentation": "README.md and phishing-email-analyser/README.md",
-  "markdown_files": 23,
+  "markdown_files": 24,
   "test_evidence": "phishing-email-analyser/docs/V12_2_SAMPLE_PACK_RELEASE.md",
-  "test_limitations": "v12.2 adds 48 entirely fictional MIME demonstration emails. The 20/24 phishing High-risk and 0/18 legitimate High-risk observations are synthetic regression behavior, NOT independent real-world accuracy evidence. A separate limited v12.1 public corpus exploratory study remains documented. QR image recognition is browser/decoder dependent; original public dataset and private case review are excluded.",
+  "test_limitations": "v12.2 adds 48 entirely fictional MIME demonstration emails. The 20/24 phishing High-risk and 0/18 legitimate High-risk observations are synthetic regression behavior, NOT independent real-world accuracy evidence. A separate limited v12.1 public corpus exploratory study remains documented. QR decoding requires a one-time verified npm jsQR install where BarcodeDetector is unavailable; this package includes the pinned installer, not unverified third-party bytes. Original public dataset and private case review are excluded.",
   "runtime": "offline static browser JavaScript; optional local QR decoder and unverified local IOC list",
   "source_sha256": [
     {
@@ -15,8 +15,8 @@
     },
     {
       "path": ".github/workflows/security-tests.yml",
-      "bytes": 4409,
-      "sha256": "bd8d89cea1d329b6a793b2d3d8c2b836f8fcd24a5fec230ba53f682c5491ac5d"
+      "bytes": 4550,
+      "sha256": "923b91bedd33d92357084208f7bb985d2e713d737d065732ec96d4ff2ee5740e"
     },
     {
       "path": ".gitignore",
@@ -25,13 +25,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 4485,
-      "sha256": "5a9831c9e8eb1ac5aea60ef965b6c315be77e0453f9415168ddcb70cd3ac9c00"
+      "bytes": 4912,
+      "sha256": "fdd8490046ce840d7ae93584ad7cdb2cfe4d9448adce43d4502082dcdbd0d3e2"
+    },
+    {
+      "path": "phishing-email-analyser/INSTALL_QR_DECODER_WINDOWS.cmd",
+      "bytes": 438,
+      "sha256": "4522837deaf6a224d45ab63b92e7b02278d6a0ddce257d00258aefb70b728238"
     },
     {
       "path": "phishing-email-analyser/README.md",
-      "bytes": 18491,
-      "sha256": "5eb0838d8d67547f4c98092ceef1c221894091d6cde7603fddb2c90539e6b258"
+      "bytes": 20412,
+      "sha256": "27b31cab12c14ac6636bf86d254b8cdd017002145ce10d58eecaa22329786480"
     },
     {
       "path": "phishing-email-analyser/_headers",
@@ -52,6 +57,11 @@
       "path": "phishing-email-analyser/docs/MERGE_REVIEW_FIXES.md",
       "bytes": 3552,
       "sha256": "07a1f03fcf03cafc45ed09486a192b08515ec8d9903ffcc525bdbb443b078fba"
+    },
+    {
+      "path": "phishing-email-analyser/docs/QR_DECODER_FIX_12_2_1.md",
+      "bytes": 3154,
+      "sha256": "bfd6af7dc932ccb363f00dbb14de258e1f9bf9ece572e9d1d2bc5fd160a578b0"
     },
     {
       "path": "phishing-email-analyser/docs/TEAM_BASELINE_PROVENANCE.json",
@@ -570,8 +580,8 @@
     },
     {
       "path": "phishing-email-analyser/index.html",
-      "bytes": 15008,
-      "sha256": "6872ea7c1858a5af2f4a767a5f1c27458ff2fd634463cd90b5b368030556a865"
+      "bytes": 15041,
+      "sha256": "6fae64a85e1f991e60d5553b419b251b5da51ce0a95c8aa7e1acb0e3289cbfc0"
     },
     {
       "path": "phishing-email-analyser/js/analyser.js",
@@ -580,8 +590,8 @@
     },
     {
       "path": "phishing-email-analyser/js/app.js",
-      "bytes": 32639,
-      "sha256": "8f1e840ad00121cd283970f552c931899b950c62805c1474ad399dbf747c5882"
+      "bytes": 32691,
+      "sha256": "5919afb77ff486b06e0f07223ca21f6cfcfa661e1e866201cb7311d0a1a95d76"
     },
     {
       "path": "phishing-email-analyser/js/attachment-security.js",
@@ -734,6 +744,11 @@
       "sha256": "fc3163244f16d51f9f9552b0c6d5d467d514aa59e328037c82f47b6703bda663"
     },
     {
+      "path": "phishing-email-analyser/tests/qr-installer-tests.js",
+      "bytes": 2539,
+      "sha256": "482cf3c160bd3dce3a997467c74885a889afa7057b7a1347f71607cfa94a165c"
+    },
+    {
       "path": "phishing-email-analyser/tests/release-hardening-tests.js",
       "bytes": 5928,
       "sha256": "e32b28345ab196c33249c70d4dd98f16e057481e8c819dd67557fd0cddb1781c"
@@ -815,8 +830,8 @@
     },
     {
       "path": "phishing-email-analyser/tools/build-release-manifest.py",
-      "bytes": 1790,
-      "sha256": "767a77108df7dbff328317138adeadea114d30272af44ce09da7746ff3492534"
+      "bytes": 1911,
+      "sha256": "4242730ff80030a0046e37824bc2df54ee092c0e4b70652952f1bf3e7fccdad0"
     },
     {
       "path": "phishing-email-analyser/tools/evaluate-example-emls.js",
@@ -832,6 +847,16 @@
       "path": "phishing-email-analyser/tools/generate-example-emls.py",
       "bytes": 22906,
       "sha256": "9758d41f2369d47acf10d5106371018d0b794a57b09a8c0e886ef4e65a1be1e3"
+    },
+    {
+      "path": "phishing-email-analyser/tools/install-qr-decoder.ps1",
+      "bytes": 3560,
+      "sha256": "b208c8ebbc800e594ad6c8de774507cdc66246f888a37787c30bc51ff746312a"
+    },
+    {
+      "path": "phishing-email-analyser/tools/install-qr-decoder.py",
+      "bytes": 4661,
+      "sha256": "25d55983c9a26f16356649408b300700577313c9315a56799a25ac12ea1124d7"
     },
     {
       "path": "phishing-email-analyser/tools/public-corpus-evaluation.js",
@@ -890,8 +915,8 @@
     },
     {
       "path": "phishing-email-analyser/tools/vendor-qr-decoder.py",
-      "bytes": 3389,
-      "sha256": "8727beff499693dfb2e1a741045bdfd71f98724d0703acb8b36ade8971d1ca77"
+      "bytes": 3422,
+      "sha256": "ac69e89e6135a00be7377e6ede3f01bbf0f2bcff27b591a495071c3c49e3ccae"
     },
     {
       "path": "phishing-email-analyser/tools/verify-qr-vendor.py",

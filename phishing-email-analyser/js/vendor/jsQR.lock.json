@@ -1,0 +1,13 @@
+{
+    "version":  "1.4.0",
+    "license":  "Apache-2.0",
+    "sha256":  {
+                   "jsQR.js":  "bc40c8a15196236b2314db0856f72ca0b49980cd5413b8c852a7349f5fee0859",
+                   "jsQR.LICENSE":  "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+               },
+    "provenance":  "npm published v1.4.0 integrity; verified SHA-512 before extraction",
+    "npm_integrity":  "sha512-dxLob7q65Xg2DvstYkRpkYtmKm2sPJ9oFhrhmudT1dZvNFFTlroai3AWSpLey/w5vMcLBXRgOJsbXpdN9HzU/A==",
+    "runtime_network":  false,
+    "library":  "jsqr",
+    "npm_tarball":  "https://registry.npmjs.org/jsqr/-/jsqr-1.4.0.tgz"
+}

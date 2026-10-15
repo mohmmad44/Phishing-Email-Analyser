@@ -30,7 +30,7 @@ assets=(
 # Validate injection anchor before writing ANY asset.
 html=root/'index.html'
 source=html.read_text(encoding='utf-8')
-anchor='<!-- Optional offline jsQR decoder may be installed by tools/vendor-qr-decoder.py. -->'
+anchor='<!-- The verified offline jsQR decoder is installed by tools/install-qr-decoder.py or tools/install-qr-decoder.ps1. -->'
 script='<script src="js/vendor/jsQR.js"></script>'
 if script not in source and anchor not in source:raise SystemExit('Missing approved HTML injection anchor; no writes performed')
 validated={}
